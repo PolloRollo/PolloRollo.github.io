@@ -1,7 +1,4 @@
-# PolloRollo.github.io
+# David Rollo
 
-I'm going to add some stuff and see how that looks
-
-<h1>hello there</h1>
-
+[Software manual for Math4610](pollorollo.github.io/extra.md)
 Adding a [link](pollorollo.github.io/extra.md)
