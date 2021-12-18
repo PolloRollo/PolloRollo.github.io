@@ -61,7 +61,7 @@ end of the second value).
     c
     c loop, dividing by 2 each time to determine when the difference between one and
     c the approximation is zero in single precision
-    c --------------------------------------------- 
+    c ---------------------------------------------
     c
           ipow = 0
           do 1 i=1,1000
