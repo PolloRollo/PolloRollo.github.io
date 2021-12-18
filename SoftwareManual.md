@@ -32,7 +32,7 @@
 
 -  [Gaussian eliomination plus backsubstitution for linear systems of equations](/softwareManual/GaussianElimination.md)
 
--  [LU factorization plus forward substitution and backsubstitution for linear systems of equations](/softwareManual/LUFactorization.md)
+-  [LU factorization for linear systems of equations](/softwareManual/LUFactorization.md)
 
 -  [linear system solver with scaled partial pivoting](/softwareManual/partialPivoting.md)
 
@@ -68,9 +68,11 @@
 
 -  [method for 1-norm of a matrix](/softwareManual/matrix1Norm.md)
 
--  [method for infinity-norm of a matrix](softwareManual/matrix2Norm.md)
+-  [method for 2-norm of a matrix](softwareManual/matrix2Norm.md)
 
--  [method for matrix transpose](softwareManual/matrixInfinityNorm.md)
+-  [method for infinity-norm of a matrix](softwareManual/matrixInfinityNorm.md)
+
+-  [method for matrix transpose](softwareManual/matrixTranspose.md)
 
 -  [method for matrix-vector multiplication](softwareManual/matrixVectorMultiply.md)
 
