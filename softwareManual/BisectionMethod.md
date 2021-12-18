@@ -6,15 +6,19 @@
 
 **Language:** Python
 
-**Description/Purpose:** This routine will compute the single precision value for the machine epsilon or the number of digits
-in the representation of real numbers in single precision. This is a routine for analyzing the behavior of any computer. This
-usually will need to be run one time for each computer.
+**Description/Purpose:** This routine will compute a root (if it exists) of a function between two bounds.
+This process is executed by using the bisection method which has linear convergence.
 
-**Input:** There are no inputs needed in this case. Even though there are arguments supplied, the real purpose is to
-return values in those variables.
+**Input:** This function takes the following inputs.
 
-**Output:** This routine returns a single precision value for the number of decimal digits that can be represented on the
-computer being queried.
+| input   | type        | description |
+|---------|-------------|-------------|
+|       f | function |  Function for which we desire a root. Takes input x and returns y |
+|   lowerBound |  float |  Lowerbound for our root search |
+|   upperBound |  float |   Upperbound for our root search |
+|    iterations |   integer |   Maximal number of iterations |
+
+**Output:** This routine return the float value for x in our bounds which solves our function.
 
 **Usage/Example:**
 
