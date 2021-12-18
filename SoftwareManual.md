@@ -1,8 +1,8 @@
 # Software Manual for Math4610
 
--  [smaceps() - single precision machine epsilon]()
+-  [smaceps() - single precision machine epsilon](/softwareManual/smaceps)
 
--  [dmaceps() - double precision machine epsilon]()
+-  [dmaceps() - double precision machine epsilon](/softwareManual/dmaceps)
 
 -  [2D graphics rouinte for y=f(x)]()
 
