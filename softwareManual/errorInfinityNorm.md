@@ -1,19 +1,10 @@
 # Math 4610 Software Manual
 
-**Routine Name:**           matrixAddition
+**Routine Name:**           errorInfinityNorm
 
 **Author:** David Rollo
 
 **Language:** Python
-
-For example,
-
-    gfortran smaceps.f
-
-will produce an executable **./a.exe** than can be executed. If you want a different name, the following will work a bit
-better
-
-    gfortran -o smaceps smaceps.f
 
 **Description/Purpose:** This routine will compute the single precision value for the machine epsilon or the number of digits
 in the representation of real numbers in single precision. This is a routine for analyzing the behavior of any computer. This
