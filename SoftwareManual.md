@@ -1,6 +1,6 @@
 # Software Manual for Math4610
 
--  [printmatrix](/softwareManual/printMatrix.md)
+-  [Print matrix](softwareManual/printMatrix.md)
 
 -  [smaceps() - single precision machine epsilon](softwareManual/smaceps.md)
 
