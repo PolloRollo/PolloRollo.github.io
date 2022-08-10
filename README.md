@@ -2,5 +2,13 @@
 
 Welcome!
 
-[Software manual for Math4610](SoftwareManual.md)
+### Writing
+
+
+
+### Research
+
+### Projects
+
+[Software manual for Math4610](softwareManual/SoftwareManual.md)
 
