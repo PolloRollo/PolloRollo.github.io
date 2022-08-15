@@ -1,5 +1,8 @@
+<head>
+<title>Empty Set</title>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
 
 # The most unique collection
 
@@ -85,7 +88,7 @@ mathematicians frame their statements like
 
     - ∀x ∈ S (For all x in S), x has a special property 
     - ∃x ∈ S (There exists an x in S) such that f(x)=0
-    - $\sum_{x \in S} f(x) $(The sum of costs over S) $\geq 10^8$  
+    - $\sum_{x \in S} f(x)$ (The sum of costs over S) $\geq 10^8$  
 
 H<sub>2</sub>O
 
