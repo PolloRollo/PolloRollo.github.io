@@ -80,7 +80,7 @@ Mathematicians frame their statements to emphasize the elements of a set.
 Using this notation we can quickly define, construct, or prove multiple things simultaneously.
 
 
-### Nothing is True (Vacuous logic)
+### Truly Contradictory (Vacuous Logic)
 
 If there is nothing in the set, we call it empty.
 As illustrated above, the empty set is like a museum with no contents.
