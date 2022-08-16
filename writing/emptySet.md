@@ -142,4 +142,5 @@ This will guarantee that your set is non-empty.
 
 ----
 
-
+The moral of this story is that if a somebody approaches you making a collection of grandiose promises,
+remember that it may just be empty.
