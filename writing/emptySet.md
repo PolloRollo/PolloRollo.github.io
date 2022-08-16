@@ -110,63 +110,29 @@ This is summarized in the following truth table:
 
 If p is false, we call the conditional statement *vacuously true*. 
 Statements about the empty set are also conditional, but more subtle.
-When we say 'There exists an x in ∅ such that f(x)=0', we have a vacuous truth.
-This is because x does not exist and there are no elements in ∅. 
-The same argument applies to statement which begin with 'For all x in ∅'.
-
-These vacuous statements can be mundane,
-*The items inside are all apples*,
-or impossible, *Collection of the World's Unicorns*.
-Each are true because t.
+When we say 'There exists an x in ∅ such that f(x)=0',
+we have a vacuous truth.
+Because there are no elements in ∅, x does not exist. 
+The same argument applies to statement which begin with 'For all x in ∅'–
+no elements means no x. 
 
 -----
 
-When we talk about interesting properties of the empty set,
-we are most commonly referring to its contents.
-The empty set itself, like all other sets, is a container.
-It's the elements within the set that everyone is concerned about.
-Like the museum above, and like other museums,
-you aren't there for the museum.
-You are there for what the museum holds-
-the pottery, paintings, and statues.
-Those art pieces have certain *properties*,
-typically an astronomical price value,
-that tie them all together.
+Vacuous truths allow the empty set to have some interesting properties.
+In our story, this meant that the museum could truthfully say something mundane, *The items inside are all apples*,
+or impossible, *Collection of the World's Unicorns*. Strangely, it also allows us to say the opposite,
+*The items inside are all not apples*, and still be true.
+We could even say that *The items inside are all apples and not apples*!
 
-As illustrated above, the empty set is like a museum with no contents.
-Because there are no contents,
-any statement you make about the elements of the empty set is vacuously true.
-These statements can be mundane,
-*The items inside are all apples*,
-or impossible, *Collection of the World's Unicorns*.
-Each are true.
+Since any statement we make is vacuously true,
+the conclusion can be anything, even contradictory or impossible.
+For this reason we need to take care to not accidently study the empty set. 
 
-Perhaps another explanation.
-As a kid I had a coin collection;
-coins of different values and from different eras.
-If I removed one coin,
-I would still have a coin collection.
-If I were to repeat this action,
-continually removing coins,
-I could still call my collection a coin collection.
-If every element within a set has the same properties,
-removing one will not invalidate the statement about the collection.
-Even when I remove the last coin,
-my collection -- an empty set - is still a coin collection.
-This thought process could be repeated with any collection of items
--- and each statement would still be true.
+Imagine we want to study numbers which have two properties.
+As a simple example, those properties will be that the integer is prime and that it is a square number.
+Since the set is empty (squares cannot be prime) we could logically imply any number
+of additional conditions without realizing we are discussing nothing.
+This can avoided by proving that we made a contradiction,
+which can be extremely challenging at times.
 
-
-The second is written notationally as
-
-    - ∀x ∈ S, x has a special property.
-    - ∃x ∈ S, x has a special property.
-    - For all x in S, x has a special property.
-    - There exists an x in S where x has a special property
-
-This distinction is important because everyday language works differently.
-Instead of phrases like
-
-    - 
-    - Swans can be black
-    - 
+----
