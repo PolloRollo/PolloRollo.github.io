@@ -108,19 +108,19 @@ This is summarized in the following truth table:
 |    False |      True |   True |
 | False    |     False |   True |
 
-If p is false, we call the conditional statement *vacuously true*. 
 Statements about the empty set are also conditional, but more subtle.
+If p is false, we call the conditional statement *vacuously true*.
 When we say 'There exists an x in ∅ such that f(x)=0',
 we have a vacuous truth.
 Because there are no elements in ∅, x does not exist. 
-The same argument applies to statement which begin with 'For all x in ∅'–
-no elements means no x. 
-
------
+The same argument applies to statement which begin with
+'for all x in ∅'. 
 
 Vacuous truths allow the empty set to have some interesting properties.
-In our story, this meant that the museum could truthfully say something mundane, *The items inside are all apples*,
-or impossible, *Collection of the World's Unicorns*. Strangely, it also allows us to say the opposite,
+In our story, this meant that the museum could truthfully say both the mundane, *The items inside are all apples*,
+and the impossible, *Collection of the World's Unicorns*. 
+
+Strangely, it also allows us to say the opposite,
 *The items inside are all not apples*, and still be true.
 We could even say that *The items inside are all apples and not apples*!
 
@@ -128,11 +128,18 @@ Since any statement we make is vacuously true,
 the conclusion can be anything, even contradictory or impossible.
 For this reason we need to take care to not accidently study the empty set. 
 
-Imagine we want to study numbers which have two properties.
-As a simple example, those properties will be that the integer is prime and that it is a square number.
-Since the set is empty (squares cannot be prime) we could logically imply any number
-of additional conditions without realizing we are discussing nothing.
-This can avoided by proving that we made a contradiction,
-which can be extremely challenging at times.
+Imagine we want to study integers which have two properties,
+being prime and being square.
+Since squares cannot be prime, the set will be empty.
+We could then–without realizing we are discussing nothing–logically
+imply any number of additional conditions. 
+This would be a useless and time-wasting endeavour.
+
+Proving that the properties are contradictory can be extremely challenging at times, 
+especially if the properties appear unrelated.
+The best way to avoid this is to always have an example to study.
+This will guarantee that your set is non-empty.
 
 ----
+
+
