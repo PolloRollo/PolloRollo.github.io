@@ -1,9 +1,3 @@
-<head>
-<title>Empty Set</title>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</head>
-
 # The most unique collection
 
 C: Hurry! You are going to miss it!
@@ -75,41 +69,55 @@ One reason sets can initially be confusing is how we talk about them–which mos
 Rather, we discuss the contents of the set.
 For example, 'rare pennies' is not a property of your collection–
 it's a property of the objects in your collection.
-Similarly, the set of primes is not itelf 'prime'–but the numbers inside are.
+Similarly, the set of primes is not itelf 'prime'–but the elements inside are.
 
-This distinction is important because everyday language works differently.
-Instead of phrases like
+Mathematicians frame their statements to emphasize the elements of a set.
 
-    - Americans are rude (property)
-    - Capybaras can be large
-    - The library is worth 100 million dollars
-
-mathematicians frame their statements like
-
-    - ∀x ∈ S (For all x in S), x has a special property 
+    - ∀x ∈ T (For all x in T), x has a special property 
     - ∃x ∈ S (There exists an x in S) such that f(x)=0
-    - $\sum_{x \in S} f(x)$ (The sum of costs over S) $\geq 10^8$  
+    - S ⊆ T (S is a subset of T, so all the elements of S are in T)
 
-H<sub>2</sub>O
-
-
-
-
-
-
-
+Using this notation we can quickly define, construct, or prove multiple things simultaneously.
 
 
 ### Nothing is True (Vacuous logic)
+
 If there is nothing in the set, we call it empty.
 As illustrated above, the empty set is like a museum with no contents.
 So, what does it mean to talk about its contents?
 
-These statements can be mundane,
+First, let's discuss the logic of conditional statements, p ⇒ q. 
+If p is satisfied, then q is implied to be true.
+For example, let's analyze the following statement:
+if today is Sunday, then football will be on TV.
+
+    - When both p (today is Sunday) and q (football will be on TV) are true, the conditional statement is true.
+    - If there is no football and today is Sunday, then the statement is false.
+    - If it's not Sunday and there is no football on TV then the statement is true.
+
+But what if there is football on TV and today is not Sunday? 
+Well our conditional statement never claimed that football is *only* televised on Sundays.
+There isn't evidence that statement has been violated, which means our conditional is still true.
+
+This is summarized in the following truth table:
+
+| p        | q         | p → q  |
+|----------|-----------|--------|
+| True     |      True |   True |
+|     True |     False |  False |
+|    False |      True |   True |
+| False    |     False |   True |
+
+If p is false, we call the conditional statement *vacuously true*. 
+Statements about the empty set are also conditional, but more subtle.
+When we say 'There exists an x in ∅ such that f(x)=0', we have a vacuous truth.
+This is because x does not exist and there are no elements in ∅. 
+The same argument applies to statement which begin with 'For all x in ∅'.
+
+These vacuous statements can be mundane,
 *The items inside are all apples*,
 or impossible, *Collection of the World's Unicorns*.
-Each are true.
-
+Each are true because t.
 
 -----
 
@@ -155,3 +163,10 @@ The second is written notationally as
     - ∃x ∈ S, x has a special property.
     - For all x in S, x has a special property.
     - There exists an x in S where x has a special property
+
+This distinction is important because everyday language works differently.
+Instead of phrases like
+
+    - 
+    - Swans can be black
+    - 
