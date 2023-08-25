@@ -1,11 +1,13 @@
 # main links
 main:
-  - title: "Something Else"
+  - title: "Projects"
+    url: https://en.wikipedia.org/wiki/Leonhard_Euler
+  - title: "Posts"
     url: https://en.wikipedia.org/wiki/Leonhard_Euler
   - title: "About"
     url: https://en.wikipedia.org/wiki/Leonhard_Euler
-  - title: "Sample Posts"
-    url: /year-archive/
+  # - title: "Sample Posts"
+  #   url: /year-archive/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
