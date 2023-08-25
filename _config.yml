@@ -18,14 +18,14 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 locale                   : "en-US"
 title                    : "PolloRollo"
 title_separator          : "-"
-subtitle                 : "site tagline that appears below site title in masthead"
+subtitle                 : # "site tagline that appears below site title in masthead"
 name                     : "David Rollo"
 description              : "An amazing website *(in-progress)*."
 url                      : "https://pollorollo.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "pollorollo/pollorollo.github.io"
 teaser                   : "/assets/images/500x300.png" # path of fallback teaser image, e.g.
-logo                     : "/assets/images/Zachary-Karate-Club-graph.png"
+logo                     : "/assets/images/Zacharys-Karate-Club-graph.png"
 masthead_title           : # Change if you want different from Title "PolloRollo"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
