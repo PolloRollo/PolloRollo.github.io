@@ -25,7 +25,7 @@ url                      : "https://pollorollo.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "pollorollo/pollorollo.github.io"
 teaser                   : "/assets/images/500x300.png" # path of fallback teaser image, e.g.
-logo                     : "/assets/images/Zacharys-Karate-Club-graph.png"
+logo                     : "docs/assets/images/Zacharys-Karate-Club-graph.png"
 masthead_title           : # Change if you want different from Title "PolloRollo"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
