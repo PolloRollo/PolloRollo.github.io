@@ -1,0 +1,24 @@
+import './Footer.css';
+import { Link } from 'react-router-dom';
+// Components
+
+function Footer() {
+  return (
+    <div className='footer-container'>
+      <section className='social-media'>
+        <div className='social-media-wrap'>
+          <div className='footer-logo'>
+            <Link to='/' className='social-logo'>
+              PolloRollo
+              <i className='fab fa-typo3' />
+            </Link>
+          </div>
+          <small className='website-rights'> David Rollo © 2024</small>
+          
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export default Footer;
