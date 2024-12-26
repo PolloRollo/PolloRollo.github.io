@@ -1,6 +1,4 @@
 import '../App.css';
-import { Link } from 'react-router-dom';
-import Sidebar from '../components/Sidebar';
 
 function About() {
 
