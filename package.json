@@ -1,7 +1,7 @@
 {
   "name": "pollorollo",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "homepage": "https://pollorollo.github.io",
   "type": "module",
   "scripts": {
