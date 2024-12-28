@@ -1,6 +1,7 @@
 import '../App.css';
 import { Link } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
+import RecentPosts from '../components/RecentPosts';
 
 function Home() {
 
@@ -8,10 +9,16 @@ function Home() {
     <>
     <Link to="/about" className="navbar-logo">
     <Sidebar
-        photoUrl='/build/vite.svg'
+        photoUrl='/vite.svg'
         websiteName='David Rollo'
         description='This is my website.'
       ></Sidebar>
+      <RecentPosts 
+      title="Recent Projects" count={3} source='projects.json'
+      ></RecentPosts>
+      <RecentPosts 
+      title="Research" count={3} source='projects.json'
+      ></RecentPosts>
     </Link>
       
     </>
