@@ -13,14 +13,13 @@ function Home() {
         websiteName='David Rollo'
         description='This is my website.'
       ></Sidebar>
-      <RecentPosts 
-      title="Recent Projects" count={3} source='projects.json'
-      ></RecentPosts>
-      <RecentPosts 
-      title="Research" count={3} source='projects.json'
-      ></RecentPosts>
     </Link>
-      
+    <RecentPosts 
+      title="Recent Projects" count={3} source='projects.json'
+    ></RecentPosts>
+    <RecentPosts 
+      title="Research" count={3} source='research.json'
+    ></RecentPosts>
     </>
   );
 }

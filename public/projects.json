@@ -1,7 +1,8 @@
 
 [
-    { "id": 1, "title": "First Blog Post", "slug": "first-blog-post", "content": "Content of the first blog post" },
-    { "id": 2, "title": "Second Blog Post", "slug": "second-blog-post", "content": "Content of the second blog post" },
-    { "id": 3, "title": "Third Blog Post", "slug": "third-blog-post", "content": "Content of the third blog post" }
+    { "id": 3, "title": "Optimization", "slug": "optimization", "content": "Content of the third blog post" },
+    { "id": 4, "title": "Math Finance", "slug": "math-finance", "content": "Content of the fourth blog post" },
+    { "id": 1, "title": "Project Euler", "slug": "project-euler", "content": "Content of the first blog post" },
+    { "id": 2, "title": "Ticket to Ride", "slug": "ticket-to-ride", "content": "Content of the second blog post" }
 ]
   
