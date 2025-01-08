@@ -1,7 +1,36 @@
 
-[
-    { "id": 1, "title": "First Blog Post", "slug": "first-blog-post", "content": "Content of the first blog post" },
-    { "id": 2, "title": "Second Blog Post", "slug": "second-blog-post", "content": "Content of the second blog post" },
-    { "id": 3, "title": "Third Blog Post", "slug": "third-blog-post", "content": "Content of the third blog post" }
-]
-  
+{
+    "category": "projects",
+    "content": [
+        { "id": 1,
+        "title": "Optimization",
+        "slug": "optimization",
+        "content": "asdfghjk",
+        "raw": ""},
+        { "id": 2, 
+        "title": "Math Finance", 
+        "slug": "math-finance", 
+        "content": "Content of the fourth blog post", 
+        "raw": "" },
+        { "id": 3, 
+        "title": "Project Euler", 
+        "slug": "project-euler", 
+        "content": "Content of the first blog post", 
+        "raw": "https://raw.githubusercontent.com/PolloRollo/ProjectEuler/refs/heads/main/README.md" },
+        { "id": 4, 
+        "title": "Ticket to Ride", 
+        "slug": "ticket-to-ride", 
+        "content": "Content of the second blog post", 
+        "raw": "https://raw.githubusercontent.com/PolloRollo/TicketToRide/refs/heads/main/README.md" },
+        { "id": 5, 
+        "title": "Website", 
+        "slug": "website", 
+        "content": "Content of the second blog post", 
+        "raw": "https://raw.githubusercontent.com/PolloRollo/PolloRollo.github.io/refs/heads/react/README.md" },
+        { "id": 6, 
+        "title": "High-Dimensional Data", 
+        "slug": "hd-data", 
+        "content": "Content of the second blog post", 
+        "raw": "" }
+    ]
+}
