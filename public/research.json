@@ -1,3 +1,12 @@
-[
-    { "id": 1, "title": "FriendBRW", "slug": "friend-brw", "content": "Content of the first blog post" }
-]
+{
+    "category": "publications",
+    "content": [
+        { "id": 1, 
+        "title": "A Reciprocity-Based Method for Improving Community Detection on Directed Friendship Networks", 
+        "slug": "friend-brw", 
+        "link": "Github.com",
+        "image": "link", 
+        "raw": "https://raw.githubusercontent.com/PolloRollo/FRIENDBRW/refs/heads/main/README.md"}
+    ]
+}
+

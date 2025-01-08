@@ -5,6 +5,7 @@ import About from './pages/About'
 import ArticlePage from './pages/ArticlePage'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import CollectionPage from './pages/CollectionPage';
 
 import './App.css'
 
@@ -18,8 +19,10 @@ function App() {
           <Route path="/" element={ <Home/> } />
           <Route path="/about" element={ <About/>} />
           <Route path="/test" element={ <Test/> } />
-          <Route path="/projects/:slug" element={<ArticlePage />} />
-          <Route path="/research/:slug" element={<ArticlePage />} />
+          <Route path="/projects/:slug" element={<ArticlePage json={'/projects.json'}/>} />
+          <Route path="/publications/:slug" element={<ArticlePage json={'/research.json'}/>} />
+          <Route path="/projects" element={<CollectionPage source={'/projects.json'}/>} />
+          <Route path="/research" element={<CollectionPage source={'/research.json'}/>} />
       </Routes>
       <Footer></Footer>
     </Router>

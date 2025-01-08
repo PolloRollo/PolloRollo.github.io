@@ -6,7 +6,7 @@ import RecentPosts from '../components/RecentPosts';
 function Home() {
 
   return (
-    <>
+    <div className='homepage'>
     <Link to="/about" className="navbar-logo">
     <Sidebar
         photoUrl='/vite.svg'
@@ -14,13 +14,15 @@ function Home() {
         description='This is my website.'
       ></Sidebar>
     </Link>
+    <div className="content">
     <RecentPosts 
-      title="Recent Projects" count={3} source='projects.json'
+      title="Recent Projects" count={5} source='projects.json'
     ></RecentPosts>
     <RecentPosts 
-      title="Research" count={3} source='research.json'
+      title="Publications" count={3} source='research.json'
     ></RecentPosts>
-    </>
+    </div>
+    </div>
   );
 }
 
