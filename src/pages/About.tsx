@@ -143,7 +143,7 @@ const interests: Interest[] = [
   },
 ];
 
-const resumePath = 'public/resumes/rollo-resume-2025-12.pdf';
+const resumePath = '/resumes/rollo-resume-2025-12.pdf';
 
 // ============================================
 // COMPONENT

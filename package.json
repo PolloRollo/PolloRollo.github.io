@@ -2,7 +2,7 @@
   "name": "pollorollo",
   "private": true,
   "version": "0.0.1",
-  "homepage": "https://pollorollo.github.io/PolloRollo/",
+  "homepage": "https://pollorollo.github.io/",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
