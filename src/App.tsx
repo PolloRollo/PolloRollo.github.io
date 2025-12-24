@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { HashRouter as Router, Routes, Route} from 'react-router-dom';
 import Home from './pages/Home'
 import Test from './pages/Test'
 import About from './pages/About'
@@ -19,10 +19,10 @@ function App() {
           <Route path="/" element={ <Home/> } />
           <Route path="/about" element={ <About/>} />
           <Route path="/test" element={ <Test/> } />
-          <Route path="/projects/:slug" element={<ArticlePage json='/projects.json'/>} />
-          <Route path="/publications/:slug" element={<ArticlePage json='/research.json'/>} />
-          <Route path="/projects" element={<CollectionPage source='/projects.json'/>} />
-          <Route path="/research" element={<CollectionPage source='/research.json'/>} />
+          <Route path="/projects/:slug" element={<ArticlePage json='projects.json'/>} />
+          <Route path="/publications/:slug" element={<ArticlePage json='research.json'/>} />
+          <Route path="/projects" element={<CollectionPage source='projects.json'/>} />
+          <Route path="/research" element={<CollectionPage source='research.json'/>} />
       </Routes>
       <Footer></Footer>
     </Router>
