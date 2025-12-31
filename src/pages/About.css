@@ -4,7 +4,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--text-color);
 }
 
 .about-section {
@@ -15,15 +15,20 @@
   font-size: 2.5em;
   margin-bottom: 2rem;
   text-align: center;
-  color: rgba(255, 255, 255, 0.87);
-  border-bottom: 2px solid #646cff;
+  color: var(--text-color);
+  border-bottom: 2px solid var(--primary-blue);
   padding-bottom: 1rem;
 }
 
 /* Hero Section */
 .about-hero {
-  margin-bottom: 0rem;
-  padding: 3rem 0;
+  margin-bottom: 2rem;
+  padding: 4rem 2rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  color: #fff;
 }
 
 .hero-content {
@@ -36,15 +41,21 @@
 
 .hero-photo-container {
   flex-shrink: 0;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #ffffff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
 .hero-photo {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border: 4px solid #646cff;
-  box-shadow: 0 4px 20px rgba(100, 108, 255, 0.3);
+  object-position: center center; /* Adjust this to pan: e.g., "top left", "30% 40%", "center top" */
+  transform: scale(3.5); /* Adjust this to zoom: 1.0 = no zoom, 1.5 = 50% zoom, 2.0 = 100% zoom, etc. */
+  transform-origin: 09% 30%; /* Adjust this to change zoom center: "30% 40%" matches object-position */
 }
 
 .hero-text {
@@ -54,22 +65,22 @@
 }
 
 .hero-name {
-  font-size: 3em;
+  font-size: 3.5em;
   margin: 0 0 0.5rem 0;
-  color: rgba(255, 255, 255, 0.87);
+  color: #fff;
 }
 
 .hero-title {
-  font-size: 1.5em;
+  font-size: 1.8em;
   margin: 0 0 1rem 0;
-  color: #646cff;
-  font-weight: 400;
+  color: var(--secondary-green);
+  font-weight: 500;
 }
 
 .hero-intro {
-  font-size: 1.1em;
+  font-size: 1.2em;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* Bio Section */
@@ -83,16 +94,16 @@
 }
 
 .bio-paragraph {
-  font-size: 1.1em;
+  font-size: 1.15em;
   line-height: 1.8;
-  margin-bottom: 0rem;
-  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
 }
 
 /* Skills Section */
 .about-skills {
   text-align: left;
-  margin-top: 0rem;
+  margin-top: 2rem;
 }
 
 .skills-container {
@@ -107,14 +118,14 @@
 .category-title {
   font-size: 1.8em;
   margin-bottom: 1.5rem;
-  color: #646cff;
-  border-left: 4px solid #646cff;
+  color: var(--primary-blue);
+  border-left: 6px solid var(--primary-green);
   padding-left: 1rem;
 }
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
@@ -124,30 +135,30 @@
   flex-direction: column;
   align-items: center;
   padding: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-  border: 1px solid rgba(100, 108, 255, 0.2);
+  background-color: rgba(78, 122, 82, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(45, 90, 136, 0.2);
   transition: all 0.3s ease;
   cursor: default;
 }
 
 .skill-item:hover {
-  background-color: rgba(100, 108, 255, 0.1);
-  border-color: #646cff;
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(100, 108, 255, 0.2);
+  background-color: rgba(78, 122, 82, 0.1);
+  border-color: var(--primary-green);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .skill-icon {
-  font-size: 2.5em;
+  font-size: 2.8em;
   margin-bottom: 0.5rem;
-  color: #646cff;
+  color: var(--primary-blue);
 }
 
 .skill-name {
-  font-size: 1em;
+  font-size: 1.1em;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--text-color);
 }
 
 /* Timeline Section */
@@ -167,7 +178,7 @@
 .timeline-section-title {
   font-size: 2em;
   margin-bottom: 2rem;
-  color: #646cff;
+  color: var(--primary-blue);
   text-align: center;
 }
 
@@ -182,8 +193,9 @@
   left: 0;
   top: 0;
   bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, #646cff, rgba(100, 108, 255, 0.3));
+  width: 4px;
+  background: linear-gradient(to bottom, var(--primary-blue), var(--primary-blue));
+  border-radius: 2px;
 }
 
 .timeline-item {
@@ -192,48 +204,35 @@
   padding-left: 3rem;
 }
 
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -0.5rem;
-  top: 0.5rem;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  background-color: #646cff;
-  border: 3px solid #242424;
-  box-shadow: 0 0 0 2px #646cff;
-}
-
 .timeline-content {
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 1.5rem;
-  border-radius: 8px;
-  border-left: 4px solid #646cff;
+  background-color: rgba(78, 122, 82, 0.05);
+  padding: 2rem;
+  border-radius: 15px;
+  border-left: 6px solid var(--primary-blue);
   transition: all 0.3s ease;
 }
 
 .timeline-content:hover {
-  background-color: rgba(100, 108, 255, 0.1);
-  transform: translateX(5px);
+  background-color: rgba(78, 122, 82, 0.1);
+  transform: translateX(10px);
 }
 
 .timeline-date {
-  font-size: 0.9em;
-  color: #646cff;
+  font-size: 1em;
+  color: var(--primary-blue);
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
 .timeline-title {
-  font-size: 1.5em;
+  font-size: 1.6em;
   margin: 0 0 0.5rem 0;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--text-color);
 }
 
 .timeline-organization {
-  font-size: 1.1em;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.15em;
+  color: var(--secondary-green);
   margin-bottom: 1rem;
   font-style: italic;
 }
@@ -245,18 +244,9 @@
 }
 
 .timeline-description li {
-  padding-left: 1.5rem;
-  position: relative;
-  margin-bottom: 0.5rem;
-  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.75rem;
+  color: var(--text-color);
   line-height: 1.6;
-}
-
-.timeline-description li::before {
-  content: '▸';
-  position: absolute;
-  left: 0;
-  color: #646cff;
 }
 
 /* Interests Section */
@@ -266,43 +256,44 @@
 
 .interests-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
   max-width: 1000px;
   margin: 0 auto;
 }
 
 .interest-item {
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 2rem;
-  border-radius: 8px;
-  border: 1px solid rgba(100, 108, 255, 0.2);
+  background-color: rgba(45, 90, 136, 0.05);
+  padding: 2.5rem;
+  border-radius: 20px;
+  border: 1px solid rgba(78, 122, 82, 0.2);
   text-align: center;
   transition: all 0.3s ease;
 }
 
 .interest-item:hover {
-  background-color: rgba(100, 108, 255, 0.1);
-  border-color: #646cff;
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(100, 108, 255, 0.2);
+  background-color: rgba(45, 90, 136, 0.1);
+  border-color: var(--primary-blue);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .interest-icon {
-  font-size: 3em;
-  color: #646cff;
+  font-size: 3.5em;
+  color: var(--primary-green);
   margin-bottom: 1rem;
 }
 
 .interest-name {
-  font-size: 1.3em;
+  font-size: 1.5em;
   margin: 0 0 0.5rem 0;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--text-color);
 }
 
 .interest-description {
-  font-size: 0.95em;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 1em;
+  color: var(--text-color);
+  opacity: 0.8;
   line-height: 1.6;
   margin: 0;
 }
@@ -310,230 +301,47 @@
 /* Resume Section */
 .about-resume {
   text-align: center;
-  padding: 2rem 0;
+  padding: 3rem 0;
 }
 
 .resume-button {
-  padding: 1rem 2.5rem;
-  font-size: 1.2em;
+  padding: 1.2rem 3rem;
+  font-size: 1.3em;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #646cff;
-  border: 2px solid #646cff;
-  border-radius: 8px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue) 100%);
+  border: none;
+  border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1rem;
   font-family: inherit;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .resume-button:hover {
-  background-color: #535bf2;
-  border-color: #535bf2;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(100, 108, 255, 0.4);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .resume-button:active {
   transform: translateY(0);
 }
 
-.resume-button i {
-  font-size: 1.1em;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
-  .about-page {
-    padding: 1rem;
+  .about-hero {
+    padding: 3rem 1rem;
   }
-
-  .section-title {
-    font-size: 2em;
-  }
-
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-text {
-    text-align: center;
-  }
-
+  
   .hero-name {
     font-size: 2.5em;
   }
 
-  .hero-title {
-    font-size: 1.3em;
-  }
-
-  .hero-photo {
-    width: 150px;
-    height: 150px;
-  }
-
-  .skills-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 1rem;
-  }
-
-  .skill-item {
-    padding: 1rem;
-  }
-
-  .skill-icon {
-    font-size: 2em;
-  }
-
-  .timeline {
-    padding-left: 1.5rem;
-  }
-
-  .timeline-item {
-    padding-left: 2rem;
-  }
-
-  .interests-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .resume-button {
-    padding: 0.875rem 2rem;
-    font-size: 1.1em;
-    width: 100%;
-    max-width: 300px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-name {
-    font-size: 2em;
-  }
-
-  .section-title {
-    font-size: 1.75em;
-  }
-
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .category-title {
-    font-size: 1.5em;
-  }
-}
-
-/* Light mode support */
-@media (prefers-color-scheme: light) {
-  .about-page {
-    color: #213547;
-  }
-
-  .section-title {
-    color: #213547;
-    border-bottom-color: #747bff;
-  }
-
-  .hero-name {
-    color: #213547;
-  }
-
-  .hero-title {
-    color: #747bff;
-  }
-
-  .hero-intro {
-    color: rgba(33, 53, 71, 0.7);
-  }
-
-  .bio-paragraph {
-    color: rgba(33, 53, 71, 0.8);
-  }
-
-  .category-title {
-    color: #747bff;
-    border-left-color: #747bff;
-  }
-
-  .skill-item {
-    background-color: rgba(0, 0, 0, 0.05);
-    border-color: rgba(116, 123, 255, 0.2);
-  }
-
-  .skill-item:hover {
-    background-color: rgba(116, 123, 255, 0.1);
-    border-color: #747bff;
-  }
-
-  .skill-name {
-    color: #213547;
-  }
-
-  .timeline-section-title {
-    color: #747bff;
-  }
-
-  .timeline-content {
-    background-color: rgba(0, 0, 0, 0.05);
-    border-left-color: #747bff;
-  }
-
   .timeline-content:hover {
-    background-color: rgba(116, 123, 255, 0.1);
-  }
-
-  .timeline-date {
-    color: #747bff;
-  }
-
-  .timeline-title {
-    color: #213547;
-  }
-
-  .timeline-organization {
-    color: rgba(33, 53, 71, 0.7);
-  }
-
-  .timeline-description li {
-    color: rgba(33, 53, 71, 0.8);
-  }
-
-  .timeline-description li::before {
-    color: #747bff;
-  }
-
-  .interest-item {
-    background-color: rgba(0, 0, 0, 0.05);
-    border-color: rgba(116, 123, 255, 0.2);
-  }
-
-  .interest-item:hover {
-    background-color: rgba(116, 123, 255, 0.1);
-    border-color: #747bff;
-  }
-
-  .interest-name {
-    color: #213547;
-  }
-
-  .interest-description {
-    color: rgba(33, 53, 71, 0.7);
-  }
-
-  .resume-button {
-    color: #fff;
-    background-color: #747bff;
-    border-color: #747bff;
-  }
-
-  .resume-button:hover {
-    background-color: #535bf2;
-    border-color: #535bf2;
+    transform: none;
   }
 }
 

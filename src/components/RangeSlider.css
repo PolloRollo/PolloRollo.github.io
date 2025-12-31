@@ -4,8 +4,8 @@
     align-items: center;
     flex-direction: column;
     gap: 1em;
-    color:#fff;
-    margin:4em auto;
+    color: var(--text-light);
+    margin: 4em auto;
 }
 
 .slider-container {
@@ -25,10 +25,8 @@
     height: 0.5em;
     outline: none;
     border-radius: 3px;
-    background: #1f1f1f;
-    box-shadow: 
-        inset 3 px 3 px 6 px #000,
-        1px 1px 1px #909090;
+    background: var(--bg-dark);
+    border: 1px solid var(--primary-green);
     cursor: pointer;
 }
 
@@ -45,8 +43,8 @@
     border-radius: 3px;
     background: linear-gradient(
         90deg,
-        #55e0ff,
-        #3193fc
+        var(--secondary-blue),
+        var(--primary-blue)
     );
     position: absolute;
     top: 50%;
@@ -93,13 +91,14 @@
 }
 
 .number-input {
-    background: none;
-    color: #fff;
+    background: var(--bg-dark);
+    color: var(--text-light);
     width: 4em;
-    border: 1px #909090 solid;
+    border: 1px var(--primary-green) solid;
     border-radius: 4px;
+    padding: 2px 5px;
 }
 
 .range-slider:hover .progress {
-    box-shadow: 0 0 1em #55e0ff;
+    box-shadow: 0 0 1em var(--secondary-blue);
 }

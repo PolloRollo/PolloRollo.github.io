@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useTheme } from '../context/ThemeContext';
 import './Navbar.css';
 
 const siteName = 'PolloRollo';
@@ -14,6 +15,7 @@ const tabs = [
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isButtonVisible, setIsButtonVisible] = useState(true);
+  const { theme, toggleTheme } = useTheme();
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
   const closeMenu = () => setIsMenuOpen(false);
@@ -44,16 +46,25 @@ function Navbar() {
             </li>
           ))}
         </ul>
-        {isButtonVisible && (
-          <button
-          className="menu-icon"
-          onClick={toggleMenu}
-          aria-expanded={isMenuOpen}
-          aria-label="Toggle navigation menu"
-        >
-          <i className={isMenuOpen ? 'fas fa-times' : 'fas fa-bars'} />
-        </button>
-        )}
+        <div className="navbar-toggle-container">
+          <button 
+            className="theme-toggle" 
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+          >
+            <i className={theme === 'light' ? 'fas fa-moon' : 'fas fa-sun'} />
+          </button>
+          {isButtonVisible && (
+            <button
+              className="menu-icon"
+              onClick={toggleMenu}
+              aria-expanded={isMenuOpen}
+              aria-label="Toggle navigation menu"
+            >
+              <i className={isMenuOpen ? 'fas fa-times' : 'fas fa-bars'} />
+            </button>
+          )}
+        </div>
       </div>
     </nav>
   );

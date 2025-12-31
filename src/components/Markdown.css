@@ -1,16 +1,28 @@
 .blog-content {
-    background-color: #383838;
+    background-color: rgba(78, 122, 82, 0.05);
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    border: 1px solid rgba(45, 90, 136, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: var(--text-light);
   }
   
-  .blog-content h1 {
-    color: #fff;
+  .blog-content h1, 
+  .blog-content h2,
+  .blog-content h3 {
+    color: var(--primary-blue);
+    border-bottom: 1px solid var(--primary-green);
+    padding-bottom: 0.5rem;
   }
-  .blog-content h2 {
-    color: #fff;
+  
+  .blog-content a {
+    color: var(--secondary-blue);
+  }
+  
+  .blog-content a:hover {
+    color: var(--primary-blue);
+    text-decoration: underline;
   }

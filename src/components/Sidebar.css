@@ -1,25 +1,39 @@
 /* src/Sidebar.css */
 .sidebar {
-    background-color: linear-gradient(90deg, rgb(10, 45, 170) 0%, rgb(141, 30, 30) 100%);
-    padding: 20px;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue) 100%);
+    padding: 30px 20px;
     width: 250px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0 15px 15px 0;
+    color: var(--text-light);
   }
   
   .sidebar-photo {
-    width: 50px;
-    height: 50px;
-    border-radius: 70%;
+    width: 220px;
+    height: 220px;
+    border-radius: 20%;
     object-fit: cover;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    border: 3px solid var(--text-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
   .sidebar-title {
-    font-size: 1em;
+    font-size: 1.5em;
+    font-weight: 600;
     margin: 0 0 10px;
+    color: var(--text-color);
   }
   
   .sidebar-description {
-    font-size: .5em;
-    color: #b5b1b1;
+    font-size: 0.7em;
+    color: rgba(240, 244, 248, 0.8);
+    line-height: 1.4;
+  }
+
+  /* Prevent sidebar text from disappearing on hover */
+  .sidebar:hover,
+  .sidebar:hover .sidebar-title,
+  .sidebar:hover .sidebar-description {
+    color: var(--text-color);
   }
