@@ -1,5 +1,5 @@
 import '../App.css';
-import './About.css';
+import '../styles/pages/About.css';
 import heroImage from '../assets/images/2024_05_TwilightLake.webp';
 
 // ============================================

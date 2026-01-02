@@ -1,0 +1,219 @@
+/* Navbar Header - Fixed positioning */
+.navbar-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+/* Glass Panel Effect */
+.navbar-glass-panel {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  margin: 1rem;
+  border-radius: 1rem;
+}
+
+:root[data-theme='light'] .navbar-glass-panel {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.navbar-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--title-color);
+  transition: color 0.2s ease;
+}
+
+.navbar-logo:hover {
+  color: var(--accent-color);
+}
+
+.navbar-logo i {
+  font-size: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-logo-text {
+  font-family: serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Desktop Navigation */
+.navbar-desktop {
+  display: none;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar-desktop {
+    display: flex;
+  }
+}
+
+.navbar-link {
+  color: var(--title-color);
+  opacity: 0.8;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.navbar-link:hover {
+  color: var(--accent-color);
+  opacity: 1;
+}
+
+.navbar-link-active {
+  color: var(--accent-color);
+  opacity: 1;
+}
+
+.navbar-link-active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--accent-color);
+  border-radius: 1px;
+}
+
+/* Theme Toggle Button */
+.navbar-theme-toggle {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1.25rem;
+}
+
+.navbar-theme-toggle:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  border-color: var(--accent-color);
+}
+
+.navbar-theme-toggle i {
+  font-size: inherit;
+}
+
+/* Mobile Controls */
+.navbar-mobile-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar-mobile-controls {
+    display: none;
+  }
+}
+
+/* Mobile Menu Toggle */
+.navbar-menu-toggle {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--bg-color);
+  border: 1px solid var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1.25rem;
+}
+
+.navbar-menu-toggle:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  border-color: var(--accent-color);
+}
+
+.navbar-menu-toggle i {
+  font-size: inherit;
+}
+
+/* Mobile Menu */
+.navbar-mobile-menu {
+  display: block;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 1rem;
+}
+
+:root[data-theme='light'] .navbar-mobile-menu {
+  border-top-color: rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (min-width: 768px) {
+  .navbar-mobile-menu {
+    display: none;
+  }
+}
+
+.navbar-mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.navbar-mobile-link {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  color: var(--title-color);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.navbar-mobile-link:hover {
+  background-color: var(--bg-color);
+  opacity: 0.8;
+}
+
+.navbar-mobile-link-active {
+  color: var(--accent-color);
+  background-color: var(--bg-color);
+  opacity: 1;
+  font-weight: 600;
+}
+

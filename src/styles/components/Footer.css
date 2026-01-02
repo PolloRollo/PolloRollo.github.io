@@ -1,0 +1,136 @@
+.footer {
+  background-color: var(--bg-color);
+  border-top: 1px solid var(--primary-green);
+  width: 100%;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.footer-brand {
+  grid-column: 1;
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: var(--title-color);
+}
+
+.footer-logo-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--primary-green);
+}
+
+.footer-logo-text {
+  font-family: serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--title-color);
+}
+
+.footer-description {
+  color: var(--text-color);
+  max-width: 28rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-heading {
+  font-family: serif;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  margin-top: 0;
+  font-size: 1rem;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-link {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: var(--primary-green);
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-social-link {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--bg-color);
+  border: 1px solid var(--primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-size: 1.25rem;
+}
+
+.footer-social-link:hover {
+  background-color: var(--primary-green);
+  color: var(--bg-color);
+  border-color: var(--primary-green);
+}
+
+.footer-social-link i {
+  font-size: inherit;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--primary-green);
+  margin-top: 3rem;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.footer-copyright {
+  color: var(--text-color);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* Tablet and up */
+@media screen and (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .footer-brand {
+    grid-column: span 2;
+  }
+}
+

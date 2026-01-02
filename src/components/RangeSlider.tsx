@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import './RangeSlider.css';
+import '../styles/components/RangeSlider.css';
 
 interface RangeSliderProps {
     thumbIcon: string;

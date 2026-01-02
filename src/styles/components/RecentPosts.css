@@ -1,0 +1,17 @@
+.recent-posts {
+  margin-bottom: 3rem;
+}
+
+.recent-posts-title {
+  margin-bottom: 1.5rem;
+  color: var(--title-color);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .recent-posts-title {
+    font-size: 1.5rem;
+  }
+}
+
