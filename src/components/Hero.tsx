@@ -39,7 +39,7 @@ const Hero = ({
         {children ? (
           children
         ) : (
-          <div className="glass-panel rounded-2xl p-8 md:p-12 max-w-2xl mx-auto text-center animate-fade-in">
+          <div className="hero-text-box">
             {title && (
               <h1 className="hero-title font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
                 {title}

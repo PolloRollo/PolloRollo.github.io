@@ -23,7 +23,7 @@
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: hsl(var(--hero-overlay));
 }
 
 /* Content Container */
@@ -36,17 +36,16 @@
   padding: 0 1.5rem;
 }
 
-/* Glass Panel Effect */
+/* Glass Panel Effect - matches background color */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  background: hsl(var(--glass));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid hsl(var(--glass-border));
 }
 
 .glass-panel.rounded-2xl {
-  border-radius: 1rem;
+  border-radius: var(--radius);
 }
 
 .glass-panel.p-8 {
@@ -72,18 +71,45 @@
   text-align: center;
 }
 
+.hero-text-box {
+  background: hsl(var(--glass));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid hsl(var(--glass-border));
+  border-radius: var(--radius);
+  max-width: 56rem; /* Width: 56rem = 896px (adjust to change box width) */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-top: 1rem; /* Top spacing: 2rem = 32px (spacing from top edge to text) */
+  padding-bottom: 2rem; /* Bottom spacing: 2rem = 32px (spacing from buttons to bottom edge) */
+  padding-left: 3rem; /* Left spacing: 2rem = 32px (spacing from left edge to content) */
+  padding-right: 3rem; /* Right spacing: 2rem = 32px (spacing from content to right edge) */
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .hero-text-box {
+    padding-top: 2rem; /* Keep consistent top spacing */
+    padding-bottom: 2rem; /* Keep consistent bottom spacing */
+    padding-left: 3rem; /* Desktop left spacing: 3rem = 48px */
+    padding-right: 3rem; /* Desktop right spacing: 3rem = 48px */
+  }
+}
+
 /* Title Styling */
 .hero-title {
-  font-family: serif;
+  font-family: var(--font-serif);
   font-size: 2.25rem;
   line-height: 1.2;
   font-weight: 700;
-  color: var(--foreground, var(--text-color));
+  color: hsl(var(--foreground));
+  margin-top: 0; /* Remove top margin for consistent spacing */
   margin-bottom: 1rem;
 }
 
 .hero-title.font-serif {
-  font-family: serif;
+  font-family: var(--font-serif);
 }
 
 .hero-title.text-4xl {
@@ -103,11 +129,13 @@
 }
 
 .hero-title.text-foreground {
-  color: var(--foreground, var(--text-color));
+  font-family: var(--font-serif);
+  color: hsl(var(--foreground));
 }
 
 .hero-title .text-primary {
-  color: var(--primary-color, var(--accent-color));
+  font-family: var(--font-serif);
+  color: hsl(var(--primary));
 }
 
 .hero-title.mb-4 {
@@ -118,7 +146,7 @@
 .hero-subtitle {
   font-size: 1.125rem;
   line-height: 1.5;
-  color: var(--muted-foreground, rgba(255, 255, 255, 0.7));
+  color: hsl(var(--muted-foreground));
   margin-bottom: 2rem;
 }
 
@@ -133,7 +161,7 @@
 }
 
 .hero-subtitle.text-muted-foreground {
-  color: var(--muted-foreground, rgba(255, 255, 255, 0.7));
+  color: hsl(var(--muted-foreground));
 }
 
 .hero-subtitle.mb-8 {
@@ -184,22 +212,22 @@
 }
 
 .hero-button-primary {
-  background-color: var(--primary-color, var(--accent-color));
-  color: var(--primary-foreground, #ffffff);
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
 }
 
 .hero-button-primary:hover {
-  opacity: 0.9;
+  background-color: hsl(var(--primary) / 0.9);
 }
 
 .hero-button-secondary {
-  background-color: var(--card-bg, rgba(255, 255, 255, 0.1));
-  color: var(--foreground, var(--text-color));
-  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.2));
+  background-color: hsl(var(--glass));
+  color: hsl(var(--foreground));
+  border: 1px solid hsl(var(--glass-border));
 }
 
 .hero-button-secondary:hover {
-  background-color: var(--muted-bg, rgba(255, 255, 255, 0.15));
+  background-color: hsl(var(--accent));
 }
 
 /* Icon Styling */

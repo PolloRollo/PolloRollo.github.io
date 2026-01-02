@@ -7,10 +7,11 @@
 
 .collection-page-title {
   margin-bottom: 2rem;
-  color: var(--title-color);
+  color: hsl(var(--foreground));
   text-align: center;
   font-size: 2.5rem;
   font-weight: 600;
+  font-family: var(--font-serif);
 }
 
 @media (max-width: 768px) {

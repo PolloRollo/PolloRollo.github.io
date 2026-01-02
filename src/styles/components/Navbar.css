@@ -7,20 +7,15 @@
   z-index: 999;
 }
 
-/* Glass Panel Effect */
+/* Glass Panel Effect - matches background color */
 .navbar-glass-panel {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  margin: 1rem;
-  border-radius: 1rem;
-}
-
-:root[data-theme='light'] .navbar-glass-panel {
-  background: rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: hsl(var(--glass));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid hsl(var(--glass-border));
+  border-top: none;
+  border-left: none;
+  border-right: none;
 }
 
 .navbar-container {
@@ -41,12 +36,12 @@
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
-  color: var(--title-color);
+  color: hsl(var(--foreground));
   transition: color 0.2s ease;
 }
 
 .navbar-logo:hover {
-  color: var(--accent-color);
+  color: hsl(var(--secondary));
 }
 
 .navbar-logo i {
@@ -59,7 +54,7 @@
 }
 
 .navbar-logo-text {
-  font-family: serif;
+  font-family: var(--font-serif);
   font-size: 1.25rem;
   font-weight: 600;
 }
@@ -78,7 +73,7 @@
 }
 
 .navbar-link {
-  color: var(--title-color);
+  color: hsl(var(--foreground));
   opacity: 0.8;
   text-decoration: none;
   font-weight: 500;
@@ -87,12 +82,12 @@
 }
 
 .navbar-link:hover {
-  color: var(--accent-color);
+  color: hsl(var(--secondary));
   opacity: 1;
 }
 
 .navbar-link-active {
-  color: var(--accent-color);
+  color: hsl(var(--secondary));
   opacity: 1;
 }
 
@@ -103,7 +98,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background-color: var(--accent-color);
+  background-color: hsl(var(--secondary));
   border-radius: 1px;
 }
 
@@ -113,20 +108,20 @@
   height: 2.5rem;
   border-radius: 50%;
   background-color: transparent;
-  border: 1px solid var(--accent-color);
+  border: 1px solid hsl(var(--secondary));
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-color);
+  color: hsl(var(--foreground));
   cursor: pointer;
   transition: all 0.2s ease;
   font-size: 1.25rem;
 }
 
 .navbar-theme-toggle:hover {
-  background-color: var(--accent-color);
-  color: var(--bg-color);
-  border-color: var(--accent-color);
+  background-color: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+  border-color: hsl(var(--secondary));
 }
 
 .navbar-theme-toggle i {
@@ -151,21 +146,21 @@
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  background-color: var(--bg-color);
-  border: 1px solid var(--accent-color);
+  background-color: hsl(var(--background));
+  border: 1px solid hsl(var(--secondary));
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-color);
+  color: hsl(var(--foreground));
   cursor: pointer;
   transition: all 0.2s ease;
   font-size: 1.25rem;
 }
 
 .navbar-menu-toggle:hover {
-  background-color: var(--accent-color);
-  color: var(--bg-color);
-  border-color: var(--accent-color);
+  background-color: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+  border-color: hsl(var(--secondary));
 }
 
 .navbar-menu-toggle i {
@@ -177,12 +172,8 @@
   display: block;
   padding-top: 1rem;
   padding-bottom: 0.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid hsl(var(--glass-border));
   margin-top: 1rem;
-}
-
-:root[data-theme='light'] .navbar-mobile-menu {
-  border-top-color: rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (min-width: 768px) {
@@ -199,20 +190,20 @@
 
 .navbar-mobile-link {
   padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
-  color: var(--title-color);
+  border-radius: calc(var(--radius) * 0.67);
+  color: hsl(var(--foreground));
   text-decoration: none;
   transition: all 0.2s ease;
 }
 
 .navbar-mobile-link:hover {
-  background-color: var(--bg-color);
+  background-color: hsl(var(--accent));
   opacity: 0.8;
 }
 
 .navbar-mobile-link-active {
-  color: var(--accent-color);
-  background-color: var(--bg-color);
+  color: hsl(var(--secondary));
+  background-color: hsl(var(--accent));
   opacity: 1;
   font-weight: 600;
 }

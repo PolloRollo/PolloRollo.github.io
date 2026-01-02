@@ -2,7 +2,11 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { BentoGrid, BentoItem } from '../components/BentoGrid';
 import ContentCard from '../components/ContentCard';
+import ProjectsHero from '../components/ProjectsHero';
+import ResearchHero from '../components/ResearchHero';
 import '../styles/pages/CollectionPage.css';
+import projectsHeroImage from '../assets/images/2024_03_SandyCrack.webp';
+import researchHeroImage from '../assets/images/2024_05_TwilightLake.webp';
 
 interface CollectionPageProps {
   source: string;
@@ -64,9 +68,26 @@ function CollectionPage({ source }: CollectionPageProps) {
     return cat === 'projects' ? '/projects' : cat === 'research' ? '/research' : `/${cat}`;
   };
 
+  const isProjectsPage = location.pathname === '/projects';
+  const isResearchPage = location.pathname === '/research';
+
   return (
     <div className="collection-page">
-      <h1 className="collection-page-title">{getPageTitle()}</h1>
+      {isProjectsPage && (
+        <ProjectsHero 
+          image={projectsHeroImage} 
+          title={getPageTitle()} 
+        />
+      )}
+      {isResearchPage && (
+        <ResearchHero 
+          image={researchHeroImage} 
+          title={getPageTitle()} 
+        />
+      )}
+      {!isProjectsPage && !isResearchPage && (
+        <h1 className="collection-page-title">{getPageTitle()}</h1>
+      )}
       <BentoGrid>
         {articles.map((article, index) => {
           const href = `${getCategoryPath(category)}/${article.slug}`;

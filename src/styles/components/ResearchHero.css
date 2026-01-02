@@ -1,0 +1,84 @@
+.research-hero {
+  position: relative;
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 3rem;
+  --research-hero-bg-image: url('');
+}
+
+/* Background Image */
+.research-hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.research-hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Optional overlay for better text visibility */
+.research-hero-background::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: hsl(var(--hero-overlay));
+  z-index: 1;
+}
+
+/* Text that acts as a window/clipping mask */
+.research-hero-title {
+  font-family: var(--font-serif);
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  
+  /* Clip the background image to the text */
+  background-image: var(--research-hero-bg-image);
+  background-size: cover;
+  background-position: center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* Fallback color if clipping doesn't work */
+  color: hsl(var(--foreground));
+  
+  /* Ensure text is visible */
+  text-shadow: none;
+  margin: 0;
+  padding: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .research-hero-title {
+    font-size: 4.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .research-hero {
+    min-height: 50vh;
+  }
+  
+  .research-hero-title {
+    font-size: 3rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .research-hero-title {
+    font-size: 2.5rem;
+  }
+}
+

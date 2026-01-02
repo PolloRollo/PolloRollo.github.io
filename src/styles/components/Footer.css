@@ -1,6 +1,6 @@
 .footer {
-  background-color: var(--bg-color);
-  border-top: 1px solid var(--primary-green);
+  background-color: hsl(var(--background));
+  border-top: 1px solid hsl(var(--border));
   width: 100%;
 }
 
@@ -26,24 +26,24 @@
   gap: 0.5rem;
   margin-bottom: 1rem;
   text-decoration: none;
-  color: var(--title-color);
+  color: hsl(var(--foreground));
 }
 
 .footer-logo-icon {
   width: 1.5rem;
   height: 1.5rem;
-  color: var(--primary-green);
+  color: hsl(var(--secondary));
 }
 
 .footer-logo-text {
-  font-family: serif;
+  font-family: var(--font-serif);
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--title-color);
+  color: hsl(var(--foreground));
 }
 
 .footer-description {
-  color: var(--text-color);
+  color: hsl(var(--muted-foreground));
   max-width: 28rem;
   line-height: 1.6;
   margin: 0;
@@ -55,9 +55,9 @@
 }
 
 .footer-heading {
-  font-family: serif;
+  font-family: var(--font-serif);
   font-weight: 600;
-  color: var(--text-color);
+  color: hsl(var(--foreground));
   margin-bottom: 1rem;
   margin-top: 0;
   font-size: 1rem;
@@ -70,13 +70,13 @@
 }
 
 .footer-link {
-  color: var(--text-color);
+  color: hsl(var(--muted-foreground));
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .footer-link:hover {
-  color: var(--primary-green);
+  color: hsl(var(--secondary));
 }
 
 .footer-social {
@@ -88,21 +88,21 @@
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  background-color: var(--bg-color);
-  border: 1px solid var(--primary-green);
+  background-color: hsl(var(--background));
+  border: 1px solid hsl(var(--secondary));
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-color);
+  color: hsl(var(--foreground));
   text-decoration: none;
   transition: all 0.2s ease;
   font-size: 1.25rem;
 }
 
 .footer-social-link:hover {
-  background-color: var(--primary-green);
-  color: var(--bg-color);
-  border-color: var(--primary-green);
+  background-color: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+  border-color: hsl(var(--secondary));
 }
 
 .footer-social-link i {
@@ -110,14 +110,14 @@
 }
 
 .footer-bottom {
-  border-top: 1px solid var(--primary-green);
+  border-top: 1px solid hsl(var(--border));
   margin-top: 3rem;
   padding-top: 2rem;
   text-align: center;
 }
 
 .footer-copyright {
-  color: var(--text-color);
+  color: hsl(var(--muted-foreground));
   font-size: 0.875rem;
   margin: 0;
 }
