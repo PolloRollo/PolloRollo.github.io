@@ -3,7 +3,6 @@ import '../styles/components/Footer.css';
 
 // Configurable values - could be moved to a config file or props
 const BRAND_NAME = 'PolloRollo';
-const BRAND_DESCRIPTION = 'Building thoughtful digital experiences while exploring the natural world. Based in Utah, working globally.';
 const COPYRIGHT_NAME = 'David Rollo';
 
 const navigationLinks = [
@@ -47,7 +46,6 @@ const Footer = () => {
               <i className="fa-solid fa-mountain-sun footer-logo-icon"></i>
               <span className="footer-logo-text">{BRAND_NAME}</span>
             </Link>
-            <p className="footer-description">{BRAND_DESCRIPTION}</p>
           </div>
 
           {/* Navigation */}

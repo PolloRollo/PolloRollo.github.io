@@ -8,13 +8,11 @@ interface ProjectsHeroProps {
 const ProjectsHero = ({ image, title }: ProjectsHeroProps) => {
   return (
     <section className="projects-hero">
-      {/* Image Container */}
-      <div className="projects-hero-image">
-        <img src={image} alt="Projects hero" />
-      </div>
-      
-      {/* Text with negative space effect */}
-      <div className="projects-hero-text">
+      {/* Text with negative space effect - image shows through */}
+      <div 
+        className="projects-hero-text"
+        style={{ '--projects-hero-bg-image': `url(${image})` } as React.CSSProperties}
+      >
         <h1 className="projects-hero-title">{title}</h1>
       </div>
     </section>

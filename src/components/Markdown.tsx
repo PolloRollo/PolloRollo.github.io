@@ -25,7 +25,7 @@ function Markdown( {url} : MarkdownProps) {
     };
 
     fetchReadme();
-  }, []);
+  }, [url]);
 
   if (error) {
     return <div>Error: {error}</div>;

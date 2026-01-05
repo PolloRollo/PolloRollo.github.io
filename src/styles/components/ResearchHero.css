@@ -1,16 +1,22 @@
 .research-hero {
   position: relative;
   width: 100%;
-  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
   margin-bottom: 3rem;
-  --research-hero-bg-image: url('');
 }
 
-/* Background Image */
+/* Container that matches image size - trimmed vertically */
+.research-hero-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  aspect-ratio: 21 / 9;
+  overflow: hidden;
+}
+
+/* Background Image - positioned behind */
 .research-hero-background {
   position: absolute;
   inset: 0;
@@ -23,26 +29,29 @@
   object-fit: cover;
 }
 
-/* Optional overlay for better text visibility */
-.research-hero-background::after {
-  content: '';
+/* Text box with background color matching page */
+.research-hero-text-box {
   position: absolute;
   inset: 0;
-  background: hsl(var(--hero-overlay));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(var(--background));
   z-index: 1;
+  --research-hero-bg-image: url('');
 }
 
 /* Text that acts as a window/clipping mask */
 .research-hero-title {
   font-family: var(--font-serif);
-  font-size: 6rem;
+  font-size: 7rem;
   font-weight: 700;
   line-height: 1.1;
   text-align: center;
-  position: relative;
-  z-index: 2;
+  margin: 0;
+  padding: 1rem 2rem;
   
-  /* Clip the background image to the text */
+  /* Clip the background image to the text - image shows through text only */
   background-image: var(--research-hero-bg-image);
   background-size: cover;
   background-position: center;
@@ -52,33 +61,28 @@
   
   /* Fallback color if clipping doesn't work */
   color: hsl(var(--foreground));
-  
-  /* Ensure text is visible */
-  text-shadow: none;
-  margin: 0;
-  padding: 2rem;
 }
 
 @media (max-width: 1024px) {
   .research-hero-title {
-    font-size: 4.5rem;
+    font-size: 5rem;
   }
 }
 
 @media (max-width: 768px) {
-  .research-hero {
-    min-height: 50vh;
+  .research-hero-container {
+    aspect-ratio: 16 / 7;
   }
   
   .research-hero-title {
-    font-size: 3rem;
-    padding: 1.5rem;
+    font-size: 4rem;
+    padding: 0.5rem 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .research-hero-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 }
 

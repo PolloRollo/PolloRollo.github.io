@@ -7,17 +7,22 @@ interface ResearchHeroProps {
 
 const ResearchHero = ({ image, title }: ResearchHeroProps) => {
   return (
-    <section 
-      className="research-hero"
-      style={{ '--research-hero-bg-image': `url(${image})` } as React.CSSProperties}
-    >
-      {/* Background image that will be clipped by text */}
-      <div className="research-hero-background">
-        <img src={image} alt="Research hero background" />
+    <section className="research-hero">
+      {/* Container that matches image size with background color */}
+      <div className="research-hero-container">
+        {/* Background image positioned behind */}
+        <div className="research-hero-background">
+          <img src={image} alt="Research hero background" />
+        </div>
+        
+        {/* Text box with background color - text acts as window to image */}
+        <div 
+          className="research-hero-text-box"
+          style={{ '--research-hero-bg-image': `url(${image})` } as React.CSSProperties}
+        >
+          <h1 className="research-hero-title">{title}</h1>
+        </div>
       </div>
-      
-      {/* Text that acts as a window to the image */}
-      <h1 className="research-hero-title">{title}</h1>
     </section>
   );
 };

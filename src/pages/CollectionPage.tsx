@@ -4,6 +4,7 @@ import { BentoGrid, BentoItem } from '../components/BentoGrid';
 import ContentCard from '../components/ContentCard';
 import ProjectsHero from '../components/ProjectsHero';
 import ResearchHero from '../components/ResearchHero';
+import { loadJsonData } from '../lib/dataLoader';
 import '../styles/pages/CollectionPage.css';
 import projectsHeroImage from '../assets/images/2024_03_SandyCrack.webp';
 import researchHeroImage from '../assets/images/2024_05_TwilightLake.webp';
@@ -27,31 +28,27 @@ function CollectionPage({ source }: CollectionPageProps) {
   const [category, setCategory] = useState<string>('');
 
   useEffect(() => {
-    // Fetch articles (replace with actual API call or import JSON file)
-    const sourcePath = source.startsWith('/') ? source : `/${source}`;
-    fetch(sourcePath)
-      .then((res) => res.json())
+    // Load articles from JSON file using data loader
+    loadJsonData(source)
       .then((data) => {
         setArticles(data.content);
         setCategory(data.category);
       })
       .catch((error) => {
-        console.error('Error fetching articles:', error);
+        console.error('Error loading articles:', error);
       });
   }, [source]);
 
   useEffect(() => {
     // Refetch or update content based on the new location
     console.log("Route changed:", location.pathname);
-    const sourcePath = source.startsWith('/') ? source : `/${source}`;
-    fetch(sourcePath)
-      .then((res) => res.json())
+    loadJsonData(source)
       .then((data) => {
         setArticles(data.content);
         setCategory(data.category);
       })
       .catch((error) => {
-        console.error('Error fetching articles:', error);
+        console.error('Error loading articles:', error);
       });
   }, [location, source]);
 

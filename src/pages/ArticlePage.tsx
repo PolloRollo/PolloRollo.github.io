@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Markdown from "../components/Markdown";
+import { loadJsonData } from "../lib/dataLoader";
 // import ReactMarkdown from "react-markdown";
 
 interface ArticlePageProps {
@@ -27,14 +28,8 @@ function ArticlePage({json}: ArticlePageProps) {
   const [error, setError] = useState<string | null>(null); // State for error handling
 
   useEffect(() => {
-    // Fetch articles from your data source
-    fetch(json)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Failed to fetch articles.");
-        }
-        return res.json();
-      })
+    // Load articles from JSON file using data loader
+    loadJsonData(json)
       .then((data: Category) => {
         const foundArticle = data.content.find((item) => item.slug === slug);
         if (foundArticle) {
@@ -44,7 +39,7 @@ function ArticlePage({json}: ArticlePageProps) {
         }
       })
       .catch((err) => setError(err.message));
-  }, [slug]);
+  }, [slug, json]);
 
   if (error) {
     return <div>Error: {error} </div>;

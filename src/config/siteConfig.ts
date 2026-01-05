@@ -1,7 +1,7 @@
 // Site-wide configuration values
 // Update these values to customize the site content
 
-import introImage from '../assets/images/IMG_0453.webp';
+import introImage from '../assets/images/DSC01157.webp';
 
 export const siteConfig = {
   // Personal Information
@@ -20,8 +20,8 @@ export const siteConfig = {
   // Intro Section
   intro: {
     image: introImage,
-    title: "Hello, I'm David Rollo",
-    description: 'A passionate developer and outdoor enthusiast based in Utah. I build thoughtful digital experiences and explore the wilderness whenever I can. Click to learn more about my journey.',
+    title: "Hi, I'm David Rollo",
+    description: 'I\'m a software engineer and applied math student at the University of Utah. Explore my past experiences and ongoing projects.',
     linkText: 'Read my story',
     linkTo: '/about',
   },

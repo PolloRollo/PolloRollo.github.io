@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { BentoGrid, BentoItem } from './BentoGrid';
 import ContentCard from './ContentCard';
+import { loadJsonData } from '../lib/dataLoader';
 import '../styles/components/RecentPosts.css';
 
 interface RecentPostsProps {
@@ -23,21 +24,14 @@ function RecentPosts({ title, count, source }: RecentPostsProps) {
   const [category, setCategory] = useState<string>('');
 
   useEffect(() => {
-    // Fetch articles (replace with actual API call or import JSON file)
-    const sourcePath = source.startsWith('/') ? source : `/${source}`;
-    fetch(sourcePath)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`Failed to fetch ${source}`);
-        }
-        return res.json();
-      })
+    // Load articles from JSON file using data loader
+    loadJsonData(source)
       .then((data) => {
         setArticles(data.content.slice(0, count)); // Get the most recent items
         setCategory(data.category);
       })
       .catch((error) => {
-        console.error('Error fetching articles:', error);
+        console.error('Error loading articles:', error);
       });
   }, [source, count]);
 

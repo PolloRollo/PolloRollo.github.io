@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { BentoGrid, BentoItem } from './BentoGrid';
 import ContentCard from './ContentCard';
+import { loadJsonData } from '../lib/dataLoader';
 import '../styles/components/RecentPosts.css';
 
 interface Article {
@@ -18,21 +19,15 @@ function RecentProjects() {
   const [category, setCategory] = useState<string>('');
 
   useEffect(() => {
-    const sourcePath = '/projects.json';
-    fetch(sourcePath)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`Failed to fetch projects.json`);
-        }
-        return res.json();
-      })
+    // Load projects from JSON file using data loader
+    loadJsonData('projects.json')
       .then((data) => {
         // Get only the 2 most recent projects
         setArticles(data.content.slice(0, 2));
         setCategory(data.category);
       })
       .catch((error) => {
-        console.error('Error fetching projects:', error);
+        console.error('Error loading projects:', error);
       });
   }, []);
 

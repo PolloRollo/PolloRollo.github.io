@@ -1,11 +1,11 @@
 /* Intro Section Container */
 .intro-section {
-  padding: 5rem 0;
+  padding: 1rem 0;
 }
 
 @media (min-width: 768px) {
   .intro-section {
-    padding: 7rem 0;
+    padding: 1rem 0;
   }
 }
 
@@ -97,6 +97,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center; /* Adjust this to pan: e.g., "top left", "30% 40%", "center top" */
+  transform: scale(3.5); /* Adjust this to zoom: 1.0 = no zoom, 1.5 = 50% zoom, 2.0 = 100% zoom, etc. */
+  transform-origin: 09% 30%; /* Adjust this to change zoom center: "30% 40%" matches object-position */
 }
 
 /* Text content */

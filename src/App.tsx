@@ -6,6 +6,7 @@ import ArticlePage from './pages/ArticlePage'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CollectionPage from './pages/CollectionPage';
+import ScrollToTop from './components/ScrollToTop';
 import { ThemeProvider } from './context/ThemeContext';
 
 import './App.css'
@@ -16,6 +17,7 @@ function App() {
     <ThemeProvider>
       <div className="App">
         <Router>
+          <ScrollToTop />
           <Navbar></Navbar>
           <Routes>
               <Route path="/" element={ <Home/> } />
