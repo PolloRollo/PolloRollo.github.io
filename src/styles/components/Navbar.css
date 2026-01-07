@@ -108,20 +108,26 @@
   height: 2.5rem;
   border-radius: 50%;
   background-color: transparent;
-  border: 1px solid hsl(var(--secondary));
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   color: hsl(var(--foreground));
+  opacity: 0.8;
   cursor: pointer;
   transition: all 0.2s ease;
   font-size: 1.25rem;
+  outline: none;
+}
+
+.navbar-theme-toggle:focus,
+.navbar-theme-toggle:focus-visible {
+  outline: none;
 }
 
 .navbar-theme-toggle:hover {
-  background-color: hsl(var(--secondary));
-  color: hsl(var(--secondary-foreground));
-  border-color: hsl(var(--secondary));
+  border: none;
+  opacity: 1;
 }
 
 .navbar-theme-toggle i {

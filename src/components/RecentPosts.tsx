@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { BentoGrid, BentoItem } from './BentoGrid';
 import ContentCard from './ContentCard';
 import { loadJsonData } from '../lib/dataLoader';
@@ -43,10 +44,14 @@ function RecentPosts({ title, count, source }: RecentPostsProps) {
     return cat === 'projects' ? '/projects' : cat === 'research' ? '/research' : `/${cat}`;
   };
 
+  // Check if we should show "See more" card (for publications/research)
+  const showSeeMore = source === 'research.json';
+  const totalItemCount = articles.length + (showSeeMore ? 1 : 0);
+
   return (
     <div className="recent-posts">
       <h2 className="recent-posts-title">{title}</h2>
-      <BentoGrid>
+      <BentoGrid itemCount={totalItemCount}>
         {articles.map((article, index) => {
           const href = `${getCategoryPath(category)}/${article.slug}`;
           // Make first item featured if we have enough items
@@ -66,6 +71,23 @@ function RecentPosts({ title, count, source }: RecentPostsProps) {
             </BentoItem>
           );
         })}
+        {/* "See more" card for publications */}
+        {showSeeMore && (
+          <BentoItem>
+            <Link to="/research" className="content-card content-card-default see-more-card">
+              <article className="content-card-default-inner see-more-card-inner">
+                <div className="content-card-default-content see-more-content">
+                  <h3 className="content-card-title content-card-title-default">
+                    See more
+                  </h3>
+                  <div className="content-card-footer">
+                    <span className="content-card-arrow">→</span>
+                  </div>
+                </div>
+              </article>
+            </Link>
+          </BentoItem>
+        )}
       </BentoGrid>
     </div>
   );

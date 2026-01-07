@@ -1,0 +1,39 @@
+
+{
+    "category": "projects",
+    "content": [
+        { 
+            "id": 1, 
+            "title": "Website", 
+            "slug": "website", 
+            "content": "Content of the second blog post", 
+            "raw": "https://raw.githubusercontent.com/PolloRollo/PolloRollo.github.io/refs/heads/react/README.md",
+            "image": "/src/assets/images/2021_05_Redcliff.webp" 
+        },
+        {
+            "id": 2, 
+            "title": "FRIENDBRW", 
+            "slug": "friend-brw", 
+            "link": "Github.com",
+            "image": "/src/assets/images/2020_09_Pond.webp", 
+            "raw": "https://raw.githubusercontent.com/PolloRollo/FRIENDBRW/refs/heads/main/README.md"
+        },
+        {
+            "id": 3, 
+            "title": "Project Euler", 
+            "slug": "project-euler", 
+            "content": "Content of the first blog post", 
+            "raw": "https://raw.githubusercontent.com/PolloRollo/ProjectEuler/refs/heads/main/README.md",
+            "image": "/src/assets/images/2024_07_Olympus.webp" 
+        },
+        { 
+            "id": 4, 
+            "title": "Ticket to Ride", 
+            "slug": "ticket-to-ride", 
+            "content": "Content of the second blog post", 
+            "raw": "https://raw.githubusercontent.com/PolloRollo/TicketToRide/refs/heads/main/README.md",
+            "image": "/src/assets/images/2024_08_Hiawatha.webp" 
+        }
+
+    ]
+}

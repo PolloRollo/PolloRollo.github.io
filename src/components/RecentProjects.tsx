@@ -39,10 +39,13 @@ function RecentProjects() {
     return cat === 'projects' ? '/projects' : cat === 'research' ? '/research' : `/${cat}`;
   };
 
+  // Include "See more" card in count
+  const totalItemCount = articles.length + 1;
+
   return (
     <div className="recent-posts">
       <h2 className="recent-posts-title">Recent Projects</h2>
-      <BentoGrid>
+      <BentoGrid itemCount={totalItemCount}>
         {articles.map((article, index) => {
           const href = `${getCategoryPath(category)}/${article.slug}`;
           // Make first item featured (large)

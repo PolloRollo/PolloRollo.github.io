@@ -46,7 +46,7 @@
   height: 220px;
   border-radius: 50%;
   overflow: hidden;
-  border: 4px solid #ffffff;
+  border: 4px solid hsl(var(--border));
 }
 
 .hero-photo {
@@ -67,7 +67,7 @@
 .hero-name {
   font-size: 3.5em;
   margin: 0 0 0.5rem 0;
-  color: #fff;
+  color: hsl(var(--foreground));
 }
 
 .hero-title {
@@ -109,10 +109,13 @@
 .skills-container {
   max-width: 1000px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
 }
 
 .skill-category {
-  margin-bottom: 3rem;
+  margin-bottom: 0;
 }
 
 .category-title {
@@ -125,17 +128,18 @@
 }
 
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 0;
 }
 
 .skill-item {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  padding: 1.5rem;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
   background-color: hsl(var(--tag-bg));
   border-radius: var(--radius);
   border: 1px solid hsl(var(--border));
@@ -151,9 +155,9 @@
 }
 
 .skill-icon {
-  font-size: 2.8em;
-  margin-bottom: 0.5rem;
+  font-size: 1.2em;
   color: hsl(var(--primary));
+  flex-shrink: 0;
 }
 
 .skill-name {
@@ -186,37 +190,27 @@
 
 .timeline {
   position: relative;
-  padding-left: 2rem;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: hsl(var(--primary));
-  border-radius: 2px;
 }
 
 .timeline-item {
   position: relative;
   margin-bottom: 3rem;
-  padding-left: 3rem;
 }
 
 .timeline-content {
   background-color: hsl(var(--tag-bg));
   padding: 2rem;
   border-radius: var(--radius);
+  border: 1px solid hsl(var(--border));
   border-left: 6px solid hsl(var(--primary));
   transition: all 0.3s ease;
 }
 
 .timeline-content:hover {
   background-color: hsl(var(--card-hover));
-  transform: translateX(10px);
+  border-color: hsl(var(--primary));
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .timeline-date {
@@ -311,8 +305,8 @@
   padding: 1.2rem 3rem;
   font-size: 1.3em;
   font-weight: 600;
-  color: hsl(var(--primary-foreground));
-  background: hsl(var(--primary));
+  color: #ffffff !important;
+  background: hsl(209 50% 35%) !important;
   border: none;
   border-radius: 50px;
   cursor: pointer;
@@ -324,7 +318,7 @@
 }
 
 .resume-button:hover {
-  background-color: hsl(var(--primary) / 0.9);
+  background-color: hsl(209 50% 30%) !important;
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }

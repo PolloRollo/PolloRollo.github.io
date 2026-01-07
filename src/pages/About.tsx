@@ -1,6 +1,5 @@
 import '../App.css';
 import '../styles/pages/About.css';
-import heroImage from '../assets/images/2024_05_TwilightLake.webp';
 
 // ============================================
 // PLACEHOLDER DATA - Replace with your information
@@ -175,7 +174,7 @@ function About() {
   return (
     <div className="about-page">
       {/* Hero Section */}
-      <section className="about-hero" style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${heroImage})` }}>
+      <section className="about-hero">
         <div className="hero-content">
           <div className="hero-photo-container">
             <img 
@@ -187,11 +186,11 @@ function About() {
           <div className="hero-text">
             <h1 className="hero-name">{personalInfo.name}</h1>
             <h2 className="hero-title">{personalInfo.title}</h2>
-            <p className="hero-intro">
-            {personalInfo.bio.map((paragraph, index) => (
-            <p key={index} className="bio-paragraph">{paragraph}</p>
-          ))}
-            </p>
+            <div className="hero-intro">
+              {personalInfo.bio.map((paragraph, index) => (
+                <p key={index} className="bio-paragraph">{paragraph}</p>
+              ))}
+            </div>
           </div>
         </div>
       </section>

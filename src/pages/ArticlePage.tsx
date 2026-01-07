@@ -2,6 +2,9 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Markdown from "../components/Markdown";
 import { loadJsonData } from "../lib/dataLoader";
+import ProjectsHero from "../components/ProjectsHero";
+import ResearchHero from "../components/ResearchHero";
+import '../styles/pages/ArticlePage.css';
 // import ReactMarkdown from "react-markdown";
 
 interface ArticlePageProps {
@@ -20,17 +23,19 @@ interface Article {
   title: string;
   slug: string;
   raw: string;
+  image?: string;
 }
 
 function ArticlePage({json}: ArticlePageProps) {
   const { slug } = useParams<{ slug: string }>(); // Use route parameters
   const [article, setArticle] = useState<Article | null>(null); // State to hold the article data
+  const [category, setCategory] = useState<string>(''); // State to hold the category
   const [error, setError] = useState<string | null>(null); // State for error handling
 
   useEffect(() => {
-    // Load articles from JSON file using data loader
     loadJsonData(json)
       .then((data: Category) => {
+        setCategory(data.category);
         const foundArticle = data.content.find((item) => item.slug === slug);
         if (foundArticle) {
           setArticle(foundArticle);
@@ -49,11 +54,23 @@ function ArticlePage({json}: ArticlePageProps) {
     return <div>Loading...</div>;
   }
 
+  // Determine which hero to use based on category
+  const isProjects = category === 'projects';
+  const heroImage = article.image || '/src/assets/images/2020_08_Wildflowers.webp'; // Fallback image
+
   return (
-    <div>
-      <h1>{article.title}</h1>
-      <Markdown url={article.raw}></Markdown>
-    </div>
+    <>
+      {isProjects ? (
+        <ProjectsHero image={heroImage} title={article.title} />
+      ) : (
+        <ResearchHero image={heroImage} title={article.title} />
+      )}
+      <div className="article-page">
+        <div className="article-content">
+          <Markdown url={article.raw}></Markdown>
+        </div>
+      </div>
+    </>
   );
 }
 

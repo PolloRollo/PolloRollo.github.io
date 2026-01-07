@@ -1,9 +1,9 @@
 import '../App.css';
 import IntroSection from '../components/IntroSection';
-import RecentPosts from '../components/RecentPosts';
+// import RecentPosts from '../components/RecentPosts';
 import RecentProjects from '../components/RecentProjects';
 import Hero from '../components/Hero';
-import heroImage from '../assets/images/2024_03_SandyCrack.webp';
+import heroImage from '../assets/images/2020_08_Highline.webp';
 
 interface heroParams {
   image: string
@@ -53,11 +53,7 @@ function Home() {
 
       <div className="home-content-wrapper">
         <div className="content">
-          <RecentProjects />
-          
-          <RecentPosts 
-            title="Publications" count={3} source='research.json'
-          ></RecentPosts>
+          <RecentProjects/>
         </div>
       </div>
     </div>

@@ -9,7 +9,7 @@ const navigationLinks = [
   { label: 'Home', to: '/' },
   { label: 'About', to: '/about' },
   { label: 'Projects', to: '/projects' },
-  { label: 'Research', to: '/research' },
+  //{ label: 'Research', to: '/research' },
 ];
 
 const socialLinks = [

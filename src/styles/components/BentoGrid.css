@@ -32,3 +32,12 @@
   }
 }
 
+/* Single item layout - full width */
+.bento-grid-single {
+  grid-template-columns: 1fr !important;
+}
+
+.bento-grid-single .bento-item {
+  grid-column: span 1;
+}
+

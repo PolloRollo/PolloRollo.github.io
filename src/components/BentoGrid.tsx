@@ -4,11 +4,13 @@ import '../styles/components/BentoGrid.css';
 interface BentoGridProps {
   children: ReactNode;
   className?: string;
+  itemCount?: number;
 }
 
-const BentoGrid = ({ children, className = "" }: BentoGridProps) => {
+const BentoGrid = ({ children, className = "", itemCount }: BentoGridProps) => {
+  const singleItem = itemCount === 1;
   return (
-    <div className={`bento-grid ${className}`}>
+    <div className={`bento-grid ${singleItem ? 'bento-grid-single' : ''} ${className}`}>
       {children}
     </div>
   );

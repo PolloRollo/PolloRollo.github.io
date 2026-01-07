@@ -9,9 +9,10 @@ const BRAND_NAME = 'PolloRollo';
 const BRAND_ICON = 'fa-solid fa-mountain-sun'; // Font Awesome icon class
 
 const navLinks = [
+  { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
   { to: '/projects', label: 'Projects' },
-  { to: '/research', label: 'Research' },
+  //{ to: '/research', label: 'Research' },
 ];
 
 function Navbar() {

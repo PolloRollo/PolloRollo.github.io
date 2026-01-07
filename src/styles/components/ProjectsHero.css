@@ -1,11 +1,17 @@
 .projects-hero {
   position: relative;
-  width: 100%;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   margin-bottom: 3rem;
+  margin-top: 0;
+  z-index: 1;
 }
 
 /* Text Container - Negative Space Effect */
@@ -15,14 +21,17 @@
   align-items: center;
   justify-content: center;
   padding: 4rem 2rem;
+  padding-top: 7rem;
   min-height: 30vh;
   position: relative;
+  z-index: 2;
   --projects-hero-bg-image: url('');
   
-  /* Use the image as background */
+  /* Use the image as background - centered */
   background-image: var(--projects-hero-bg-image);
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+  background-attachment: scroll;
 }
 
 .projects-hero-title {
@@ -34,8 +43,8 @@
   position: relative;
   z-index: 2;
   
-  /* Negative space effect: text color matches background, creating a cutout */
-  color: hsl(var(--background));
+  /* Text color always white */
+  color: hsl(220 20% 92%);
 }
 
 @media (max-width: 1024px) {
@@ -47,6 +56,7 @@
 @media (max-width: 768px) {
   .projects-hero-text {
     padding: 3rem 1.5rem;
+    padding-top: 6rem;
     min-height: 25vh;
   }
   

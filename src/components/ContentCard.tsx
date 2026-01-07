@@ -73,9 +73,12 @@ const ContentCard = ({
             </div>
           )}
           <div className="content-card-featured-content">
-            <h3 className="content-card-title content-card-title-featured">
-              {title}
-            </h3>
+            <div className="content-card-header">
+              <h3 className="content-card-title content-card-title-featured">
+                {title}
+              </h3>
+              <span className="content-card-arrow">→</span>
+            </div>
             {abstract && (
               <p className="content-card-abstract content-card-abstract-featured">
                 {abstract}
@@ -84,10 +87,10 @@ const ContentCard = ({
             {keywords.length > 0 && (
               <div className="content-card-keywords">
                 {keywords.map((keyword, index) => (
-                <span key={index} className="content-card-tag">
-                  {keyword}
-                </span>
-              ))}
+                  <span key={index} className="content-card-tag">
+                    {keyword}
+                  </span>
+                ))}
               </div>
             )}
           </div>
@@ -110,26 +113,26 @@ const ContentCard = ({
           </div>
         )}
         <div className="content-card-default-content">
-          <h3 className="content-card-title content-card-title-default">
-            {title}
-          </h3>
+          <div className="content-card-header">
+            <h3 className="content-card-title content-card-title-default">
+              {title}
+            </h3>
+            <span className="content-card-arrow">→</span>
+          </div>
           {abstract && (
             <p className="content-card-abstract content-card-abstract-default">
               {abstract}
             </p>
           )}
-          <div className="content-card-footer">
-            {keywords.length > 0 && (
-              <div className="content-card-keywords">
-                {keywords.slice(0, 3).map((keyword, index) => (
+          {keywords.length > 0 && (
+            <div className="content-card-keywords">
+              {keywords.slice(0, 3).map((keyword, index) => (
                 <span key={index} className="content-card-tag">
                   {keyword}
                 </span>
               ))}
-              </div>
-            )}
-            <span className="content-card-arrow">→</span>
-          </div>
+            </div>
+          )}
         </div>
       </article>
     </Link>

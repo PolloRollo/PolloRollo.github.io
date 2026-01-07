@@ -85,7 +85,7 @@ function CollectionPage({ source }: CollectionPageProps) {
       {!isProjectsPage && !isResearchPage && (
         <h1 className="collection-page-title">{getPageTitle()}</h1>
       )}
-      <BentoGrid>
+      <BentoGrid itemCount={articles.length}>
         {articles.map((article, index) => {
           const href = `${getCategoryPath(category)}/${article.slug}`;
           // Make first item featured if we have enough items

@@ -1,0 +1,16 @@
+.article-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: hsl(var(--foreground));
+}
+
+.article-content {
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .article-content {
+    padding: 1rem;
+  }
+}
+
