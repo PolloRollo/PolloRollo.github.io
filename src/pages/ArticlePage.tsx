@@ -31,6 +31,7 @@ interface Article {
   image?: string;
   focalPoint?: FocalPoint;
   github?: string;
+  paper?: string;
   technologies?: string[];
 }
 
@@ -74,19 +75,34 @@ function ArticlePage({json}: ArticlePageProps) {
         <ResearchHero image={heroImage} title={article.title} />
       )}
       <div className="article-page">
-        {/* GitHub Link and Technologies Section */}
-        {isProjects && (article.github || article.technologies) && (
+        {/* GitHub Link, Paper Link, and Technologies Section */}
+        {(article.github || article.paper || (article.technologies && article.technologies.length > 0)) && (
           <div className="article-metadata">
-            {article.github && (
-              <a 
-                href={article.github} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="github-button"
-              >
-                <i className="fa-brands fa-github"></i>
-                View on GitHub
-              </a>
+            {(article.github || article.paper) && (
+              <div className="article-buttons">
+                {article.github && (
+                  <a 
+                    href={article.github} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="github-button"
+                  >
+                    <i className="fa-brands fa-github"></i>
+                    View on GitHub
+                  </a>
+                )}
+                {article.paper && (
+                  <a 
+                    href={article.paper} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="paper-button"
+                  >
+                    <i className="fa-solid fa-file"></i>
+                    View Paper
+                  </a>
+                )}
+              </div>
             )}
             {article.technologies && article.technologies.length > 0 && (
               <div className="technologies-list">

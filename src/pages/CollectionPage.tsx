@@ -17,6 +17,7 @@ interface Article {
   id: number;
   title: string;
   slug: string;
+  category?: string;
   image?: string;
   keywords?: string[];
   abstract?: string;
@@ -100,7 +101,7 @@ function CollectionPage({ source }: CollectionPageProps) {
                 image={article.image}
                 href={href}
                 variant={variant}
-                category={category}
+                category={article.category}
               />
             </BentoItem>
           );

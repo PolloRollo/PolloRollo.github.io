@@ -47,5 +47,25 @@ export const siteConfig = {
       title: 'See more',
     },
   },
+
+  // Project Category Configuration
+  projectCategories: {
+    class: {
+      label: 'Class',
+      color: '220 35% 45%',
+    },
+    puzzle: {
+      label: 'Puzzle',
+      color: '280 35% 45%',
+    },
+    demo: {
+      label: 'Demo',
+      color: '20 35% 45%',
+    },
+    research: {
+      label: 'Research',
+      color: '130 35% 45%',
+    },
+  },
 };
 
