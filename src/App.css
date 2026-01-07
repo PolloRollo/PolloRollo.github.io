@@ -30,11 +30,6 @@
   background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
 }
 
-.hero-title {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-}
-
 .hero-subtitle {
   font-size: 1.5rem;
 }

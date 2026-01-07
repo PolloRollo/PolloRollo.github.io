@@ -21,7 +21,7 @@
             "focalPoint": { "x": 50, "y": 50 },
             "raw": "https://raw.githubusercontent.com/PolloRollo/FRIENDBRW/refs/heads/main/README.md",
             "github": "https://github.com/PolloRollo/FRIENDBRW",
-            "technologies": ["React", "TypeScript", "Node.js"]
+            "technologies": ["Graph Theory", "Python", "Networkx"]
         },
         {
             "id": 3, 
@@ -32,7 +32,7 @@
             "image": "/src/assets/images/2024_07_Olympus.webp",
             "focalPoint": { "x": 50, "y": 50 },
             "github": "https://github.com/PolloRollo/ProjectEuler",
-            "technologies": ["Python", "Mathematics"]
+            "technologies": ["Mathematics", "Python", "Puzzles"]
         },
         { 
             "id": 4, 
@@ -43,7 +43,7 @@
             "image": "/src/assets/images/2024_08_Hiawatha.webp",
             "focalPoint": { "x": 50, "y": 50 },
             "github": "https://github.com/PolloRollo/TicketToRide",
-            "technologies": ["Java", "Game Development"]
+            "technologies": ["Python", "Decision Making"]
         }
 
     ]

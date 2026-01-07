@@ -98,48 +98,34 @@
 }
 
 /* Title Styling */
-.hero-title {
-  font-family: var(--font-serif);
+.hero-title,
+.hero-text-box .hero-title {
+  font-family: var(--font-serif) !important;
   font-size: 2.25rem;
   line-height: 1.2;
   font-weight: 700;
   color: hsl(var(--foreground));
-  margin-top: 0; /* Remove top margin for consistent spacing */
+  margin-top: 0;
   margin-bottom: 1rem;
 }
 
-.hero-title.font-serif {
-  font-family: var(--font-serif);
-}
-
-.hero-title.text-4xl {
-  font-size: 2.25rem;
-}
-
 @media (min-width: 768px) {
-  .hero-title.md\:text-5xl {
+  .hero-title,
+  .hero-text-box .hero-title {
     font-size: 3rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .hero-title.lg\:text-6xl {
+  .hero-title,
+  .hero-text-box .hero-title {
     font-size: 3.75rem;
   }
-}
-
-.hero-title.text-foreground {
-  font-family: var(--font-serif);
-  color: hsl(var(--foreground));
 }
 
 .hero-title .text-primary {
   font-family: var(--font-serif);
   color: hsl(var(--primary));
-}
-
-.hero-title.mb-4 {
-  margin-bottom: 1rem;
 }
 
 /* Subtitle Styling */
@@ -150,22 +136,10 @@
   margin-bottom: 2rem;
 }
 
-.hero-subtitle.text-lg {
-  font-size: 1.125rem;
-}
-
 @media (min-width: 768px) {
-  .hero-subtitle.md\:text-xl {
+  .hero-subtitle {
     font-size: 1.25rem;
   }
-}
-
-.hero-subtitle.text-muted-foreground {
-  color: hsl(var(--muted-foreground));
-}
-
-.hero-subtitle.mb-8 {
-  margin-bottom: 2rem;
 }
 
 /* Button Container */

@@ -41,12 +41,12 @@ const Hero = ({
         ) : (
           <div className="hero-text-box">
             {title && (
-              <h1 className="hero-title font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
+              <h1 className="hero-title">
                 {title}
               </h1>
             )}
             {subtitle && (
-              <p className="hero-subtitle text-lg md:text-xl text-muted-foreground mb-8">
+              <p className="hero-subtitle">
                 {subtitle}
               </p>
             )}
