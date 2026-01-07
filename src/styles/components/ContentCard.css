@@ -39,6 +39,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  min-height: 300px;
 }
 
 .content-card-image-default {
@@ -47,6 +48,7 @@
   background-color: hsl(var(--muted));
   position: relative;
   flex: 1;
+  min-height: 200px;
 }
 
 .content-card-default-content {
@@ -137,6 +139,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  min-height: 400px;
 }
 
 .content-card-image-featured {
@@ -145,6 +148,7 @@
   background-color: hsl(var(--muted));
   position: relative;
   flex: 1;
+  min-height: 250px;
 }
 
 .content-card-featured-content {

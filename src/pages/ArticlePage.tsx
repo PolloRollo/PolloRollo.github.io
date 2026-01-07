@@ -18,12 +18,20 @@ interface Category {
 }
 
 // Define the article type
+interface FocalPoint {
+  x: number; // 0-100
+  y: number; // 0-100
+}
+
 interface Article {
   id: number;
   title: string;
   slug: string;
   raw: string;
   image?: string;
+  focalPoint?: FocalPoint;
+  github?: string;
+  technologies?: string[];
 }
 
 function ArticlePage({json}: ArticlePageProps) {
@@ -61,11 +69,36 @@ function ArticlePage({json}: ArticlePageProps) {
   return (
     <>
       {isProjects ? (
-        <ProjectsHero image={heroImage} title={article.title} />
+        <ProjectsHero image={heroImage} title={article.title} focalPoint={article.focalPoint} />
       ) : (
         <ResearchHero image={heroImage} title={article.title} />
       )}
       <div className="article-page">
+        {/* GitHub Link and Technologies Section */}
+        {isProjects && (article.github || article.technologies) && (
+          <div className="article-metadata">
+            {article.github && (
+              <a 
+                href={article.github} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="github-button"
+              >
+                <i className="fa-brands fa-github"></i>
+                View on GitHub
+              </a>
+            )}
+            {article.technologies && article.technologies.length > 0 && (
+              <div className="technologies-list">
+                {article.technologies.map((tech, index) => (
+                  <span key={index} className="technology-tag">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
         <div className="article-content">
           <Markdown url={article.raw}></Markdown>
         </div>

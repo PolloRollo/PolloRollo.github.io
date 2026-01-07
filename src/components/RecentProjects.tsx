@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { BentoGrid, BentoItem } from './BentoGrid';
 import ContentCard from './ContentCard';
 import { loadJsonData } from '../lib/dataLoader';
+import { siteConfig } from '../config/siteConfig';
 import '../styles/components/RecentPosts.css';
 
 interface Article {
@@ -67,18 +67,13 @@ function RecentProjects() {
         })}
         {/* "See more" card */}
         <BentoItem>
-          <Link to="/projects" className="content-card content-card-default see-more-card">
-            <article className="content-card-default-inner see-more-card-inner">
-              <div className="content-card-default-content see-more-content">
-                <h3 className="content-card-title content-card-title-default">
-                  See more
-                </h3>
-                <div className="content-card-footer">
-                  <span className="content-card-arrow">→</span>
-                </div>
-              </div>
-            </article>
-          </Link>
+          <ContentCard
+            title={siteConfig.seeMore.projects.title}
+            abstract={siteConfig.seeMore.projects.abstract}
+            image={siteConfig.seeMore.projects.image}
+            href="/projects"
+            variant="default"
+          />
         </BentoItem>
       </BentoGrid>
     </div>

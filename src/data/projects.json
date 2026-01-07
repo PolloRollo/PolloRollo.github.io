@@ -8,15 +8,20 @@
             "slug": "website", 
             "content": "Content of the second blog post", 
             "raw": "https://raw.githubusercontent.com/PolloRollo/PolloRollo.github.io/refs/heads/react/README.md",
-            "image": "/src/assets/images/2021_05_Redcliff.webp" 
+            "image": "/src/assets/images/2021_05_Redcliff.webp",
+            "focalPoint": { "x": 50, "y": 70 },
+            "github": "https://github.com/PolloRollo/PolloRollo.github.io",
+            "technologies": ["React", "TypeScript", "Vite"]
         },
         {
             "id": 2, 
             "title": "FRIENDBRW", 
             "slug": "friend-brw", 
-            "link": "Github.com",
-            "image": "/src/assets/images/2020_09_Pond.webp", 
-            "raw": "https://raw.githubusercontent.com/PolloRollo/FRIENDBRW/refs/heads/main/README.md"
+            "image": "/src/assets/images/2020_09_Pond.webp",
+            "focalPoint": { "x": 50, "y": 50 },
+            "raw": "https://raw.githubusercontent.com/PolloRollo/FRIENDBRW/refs/heads/main/README.md",
+            "github": "https://github.com/PolloRollo/FRIENDBRW",
+            "technologies": ["React", "TypeScript", "Node.js"]
         },
         {
             "id": 3, 
@@ -24,7 +29,10 @@
             "slug": "project-euler", 
             "content": "Content of the first blog post", 
             "raw": "https://raw.githubusercontent.com/PolloRollo/ProjectEuler/refs/heads/main/README.md",
-            "image": "/src/assets/images/2024_07_Olympus.webp" 
+            "image": "/src/assets/images/2024_07_Olympus.webp",
+            "focalPoint": { "x": 50, "y": 50 },
+            "github": "https://github.com/PolloRollo/ProjectEuler",
+            "technologies": ["Python", "Mathematics"]
         },
         { 
             "id": 4, 
@@ -32,7 +40,10 @@
             "slug": "ticket-to-ride", 
             "content": "Content of the second blog post", 
             "raw": "https://raw.githubusercontent.com/PolloRollo/TicketToRide/refs/heads/main/README.md",
-            "image": "/src/assets/images/2024_08_Hiawatha.webp" 
+            "image": "/src/assets/images/2024_08_Hiawatha.webp",
+            "focalPoint": { "x": 50, "y": 50 },
+            "github": "https://github.com/PolloRollo/TicketToRide",
+            "technologies": ["Java", "Game Development"]
         }
 
     ]

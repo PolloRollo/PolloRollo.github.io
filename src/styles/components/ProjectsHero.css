@@ -27,10 +27,10 @@
   z-index: 2;
   --projects-hero-bg-image: url('');
   
-  /* Use the image as background - centered */
+  /* Use the image as background - positioned by focal point */
   background-image: var(--projects-hero-bg-image);
   background-size: cover;
-  background-position: center center;
+  background-position: var(--projects-hero-bg-position, center center);
   background-attachment: scroll;
 }
 

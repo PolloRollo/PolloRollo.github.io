@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { BentoGrid, BentoItem } from './BentoGrid';
 import ContentCard from './ContentCard';
 import { loadJsonData } from '../lib/dataLoader';
+import { siteConfig } from '../config/siteConfig';
 import '../styles/components/RecentPosts.css';
 
 interface RecentPostsProps {
@@ -74,18 +74,13 @@ function RecentPosts({ title, count, source }: RecentPostsProps) {
         {/* "See more" card for publications */}
         {showSeeMore && (
           <BentoItem>
-            <Link to="/research" className="content-card content-card-default see-more-card">
-              <article className="content-card-default-inner see-more-card-inner">
-                <div className="content-card-default-content see-more-content">
-                  <h3 className="content-card-title content-card-title-default">
-                    See more
-                  </h3>
-                  <div className="content-card-footer">
-                    <span className="content-card-arrow">→</span>
-                  </div>
-                </div>
-              </article>
-            </Link>
+            <ContentCard
+              title={siteConfig.seeMore.research.title}
+              abstract={siteConfig.seeMore.research.abstract}
+              image={siteConfig.seeMore.research.image}
+              href="/research"
+              variant="default"
+            />
           </BentoItem>
         )}
       </BentoGrid>
