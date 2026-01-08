@@ -6,6 +6,7 @@ import ArticlePage from './pages/ArticlePage'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CollectionPage from './pages/CollectionPage';
+import Photography from './pages/Photography';
 import ScrollToTop from './components/ScrollToTop';
 import { ThemeProvider } from './context/ThemeContext';
 
@@ -27,6 +28,7 @@ function App() {
               <Route path="/publications/:slug" element={<ArticlePage json='research.json'/>} />
               <Route path="/projects" element={<CollectionPage source='projects.json'/>} />
               <Route path="/research" element={<CollectionPage source='research.json'/>} />
+              <Route path="/photography" element={<Photography/>} />
           </Routes>
           <Footer></Footer>
         </Router>

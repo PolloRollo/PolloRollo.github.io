@@ -154,6 +154,11 @@ const resumePath = '/resumes/rollo-resume-2025-12.pdf';
 
 function About() {
   const handleResumeDownload = () => {
+    // Track download event with Umami
+    if (window.umami) {
+      window.umami.track('Resume Download', { name: 'rollo-resume-2025-12.pdf' });
+    }
+
     const link = document.createElement('a');
     link.href = resumePath;
     link.download = 'resume.pdf';

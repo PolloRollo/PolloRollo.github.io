@@ -5,10 +5,12 @@
 // This avoids fetch issues where the server returns index.html instead of JSON
 import projectsJson from '../data/projects.json';
 import researchJson from '../data/research.json';
+import photosJson from '../data/photos.json';
 
 const dataMap: Record<string, any> = {
   'projects.json': projectsJson,
   'research.json': researchJson,
+  'photos.json': photosJson,
 };
 
 export async function loadJsonData(filename: string): Promise<any> {
