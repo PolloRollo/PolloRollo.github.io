@@ -1,12 +1,15 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { siteConfig } from '../config/siteConfig';
+import { getPhotoById } from '../lib/utils';
 import '../styles/components/ContentCard.css';
 
 interface ContentCardProps {
   title: string;
   abstract?: string;
   keywords?: string[];
-  image?: string;
+  image?: string; // Fallback for backward compatibility
+  photoId?: number; // New: photo ID from photos.json
   href: string;
   variant?: "default" | "featured" | "compact";
   category?: string;
@@ -16,10 +19,25 @@ const ContentCard = ({
   title,
   keywords = [],
   image,
+  photoId,
   href,
   variant = "default",
   category,
 }: ContentCardProps) => {
+  const [resolvedImage, setResolvedImage] = useState<string | undefined>(image);
+
+  useEffect(() => {
+    if (photoId) {
+      getPhotoById(photoId).then(photo => {
+        if (photo) {
+          setResolvedImage(photo.image);
+        }
+      });
+    } else if (image) {
+      setResolvedImage(image);
+    }
+  }, [photoId, image]);
+
   // Get category config if category exists
   const categoryConfig = category && siteConfig.projectCategories[category as keyof typeof siteConfig.projectCategories];
   
@@ -53,10 +71,10 @@ const ContentCard = ({
     return (
       <Link to={href} className="content-card content-card-compact" data-category={category}>
         <article className="content-card-compact-inner">
-          {image && (
+          {resolvedImage && (
             <div className="content-card-image-compact">
               <img
-                src={image}
+                src={resolvedImage}
                 alt={title}
                 className="content-card-image"
                 loading="lazy"
@@ -87,10 +105,10 @@ const ContentCard = ({
     return (
       <Link to={href} className="content-card content-card-featured" data-category={category}>
         <article className="content-card-featured-inner">
-          {image && (
+          {resolvedImage && (
             <div className="content-card-image-featured">
               <img
-                src={image}
+                src={resolvedImage}
                 alt={title}
                 className="content-card-image"
                 loading="lazy"
@@ -123,10 +141,10 @@ const ContentCard = ({
   return (
     <Link to={href} className="content-card content-card-default" data-category={category}>
       <article className="content-card-default-inner">
-        {image && (
+        {resolvedImage && (
           <div className="content-card-image-default">
             <img
-              src={image}
+              src={resolvedImage}
               alt={title}
               className="content-card-image"
               loading="lazy"

@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Markdown from "../components/Markdown";
-import { loadJsonData } from "../lib/dataLoader";
+import { loadJsonData, getPhotoById } from "../lib/utils";
 import ProjectsHero from "../components/ProjectsHero";
 import ResearchHero from "../components/ResearchHero";
 import '../styles/pages/ArticlePage.css';
@@ -28,8 +28,9 @@ interface Article {
   title: string;
   slug: string;
   raw: string;
-  image?: string;
-  focalPoint?: FocalPoint;
+  image?: string; // Fallback for backward compatibility
+  photoId?: number; // New: photo ID from photos.json
+  focalPoint?: FocalPoint; // Deprecated, use photo's focalPoint instead
   github?: string;
   paper?: string;
   technologies?: string[];
@@ -40,6 +41,8 @@ function ArticlePage({json}: ArticlePageProps) {
   const [article, setArticle] = useState<Article | null>(null); // State to hold the article data
   const [category, setCategory] = useState<string>(''); // State to hold the category
   const [error, setError] = useState<string | null>(null); // State for error handling
+  const [heroImage, setHeroImage] = useState<string>('/src/assets/images/2020_08_Wildflowers.webp');
+  const [photoId, setPhotoId] = useState<number | undefined>(undefined);
 
   useEffect(() => {
     loadJsonData(json)
@@ -48,6 +51,18 @@ function ArticlePage({json}: ArticlePageProps) {
         const foundArticle = data.content.find((item) => item.slug === slug);
         if (foundArticle) {
           setArticle(foundArticle);
+          // Resolve photo ID if present
+          if (foundArticle.photoId) {
+            setPhotoId(foundArticle.photoId);
+            getPhotoById(foundArticle.photoId).then(photo => {
+              if (photo) {
+                setHeroImage(photo.image);
+              }
+            });
+          } else if (foundArticle.image) {
+            setHeroImage(foundArticle.image);
+            setPhotoId(undefined);
+          }
         } else {
           setError("Article not found.");
         }
@@ -65,12 +80,16 @@ function ArticlePage({json}: ArticlePageProps) {
 
   // Determine which hero to use based on category
   const isProjects = category === 'projects';
-  const heroImage = article.image || '/src/assets/images/2020_08_Wildflowers.webp'; // Fallback image
 
   return (
     <>
       {isProjects ? (
-        <ProjectsHero image={heroImage} title={article.title} focalPoint={article.focalPoint} />
+        <ProjectsHero 
+          photoId={photoId}
+          image={heroImage}
+          title={article.title}
+          showAttribution={true}
+        />
       ) : (
         <ResearchHero image={heroImage} title={article.title} />
       )}

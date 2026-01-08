@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { BentoGrid, BentoItem } from './BentoGrid';
 import ContentCard from './ContentCard';
-import { loadJsonData } from '../lib/dataLoader';
+import { loadJsonData } from '../lib/utils';
 import { siteConfig } from '../config/siteConfig';
 import '../styles/components/RecentPosts.css';
 

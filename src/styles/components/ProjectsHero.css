@@ -71,3 +71,33 @@
   }
 }
 
+/* Attribution Overlay */
+.projects-hero-attribution {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0.5rem 1rem;
+  background: hsl(var(--glass));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid hsl(var(--glass-border));
+  border-radius: 0;
+  font-size: 0.875rem;
+  color: hsl(var(--foreground));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.projects-hero:hover .projects-hero-attribution {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .projects-hero-attribution {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+

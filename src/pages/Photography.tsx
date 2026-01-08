@@ -2,9 +2,8 @@ import { useState, useEffect } from 'react';
 import ProjectsHero from '../components/ProjectsHero';
 import PhotoGallery from '../components/PhotoGallery';
 import PhotoLightbox from '../components/PhotoLightbox';
-import { loadJsonData } from '../lib/dataLoader';
+import { loadJsonData } from '../lib/utils';
 import '../styles/pages/Photography.css';
-import photographyHeroImage from '../assets/images/2024_03_SandyCrack.webp';
 
 interface Photo {
   id: number;
@@ -59,17 +58,15 @@ function Photography() {
     }
   };
 
-  // Use first photo's focalPoint if available, otherwise default
-  const heroFocalPoint = photos.length > 0 && photos[0].focalPoint 
-    ? photos[0].focalPoint 
-    : undefined;
+  // Use photoId 6 (Sandy Crack) for photography hero
+  const photographyHeroPhotoId = 6;
 
   return (
     <div className="photography-page">
       <ProjectsHero
-        image={photographyHeroImage}
+        photoId={photographyHeroPhotoId}
         title="Photography"
-        focalPoint={heroFocalPoint}
+        showAttribution={true}
       />
       <div className="photography-content">
         <PhotoGallery photos={photos} onPhotoClick={handlePhotoClick} />

@@ -146,26 +146,13 @@ const interests: Interest[] = [
   },
 ];
 
-const resumePath = '/resumes/rollo-resume-2025-12.pdf';
+import { handleResumeDownload } from '../lib/utils';
 
 // ============================================
 // COMPONENT
 // ============================================
 
 function About() {
-  const handleResumeDownload = () => {
-    // Track download event with Umami
-    if (window.umami) {
-      window.umami.track('Resume Download', { name: 'rollo-resume-2025-12.pdf' });
-    }
-
-    const link = document.createElement('a');
-    link.href = resumePath;
-    link.download = 'resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
 
   // Group skills by category
   const skillsByCategory = skills.reduce((acc, skill) => {

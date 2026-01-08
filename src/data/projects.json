@@ -9,8 +9,7 @@
             "category": "demo",
             "content": "Content of the second blog post", 
             "raw": "https://raw.githubusercontent.com/PolloRollo/PolloRollo.github.io/refs/heads/react/README.md",
-            "image": "/src/assets/images/2021_05_Redcliff.webp",
-            "focalPoint": { "x": 50, "y": 70 },
+            "photoId": 7,
             "github": "https://github.com/PolloRollo/PolloRollo.github.io",
             "technologies": ["React", "TypeScript", "Vite"]
         },
@@ -20,8 +19,7 @@
             "slug": "friend-brw",
             "category": "research",
             "paper": "https://ieeexplore.ieee.org/document/10002173",
-            "image": "/src/assets/images/2020_09_Pond.webp",
-            "focalPoint": { "x": 50, "y": 50 },
+            "photoId": 8,
             "raw": "https://raw.githubusercontent.com/PolloRollo/FRIENDBRW/refs/heads/main/README.md",
             "github": "https://github.com/PolloRollo/FRIENDBRW",
             "technologies": ["Graph Theory", "Python", "Networkx"]
@@ -33,8 +31,7 @@
             "category": "puzzle",
             "content": "Content of the first blog post", 
             "raw": "https://raw.githubusercontent.com/PolloRollo/ProjectEuler/refs/heads/main/README.md",
-            "image": "/src/assets/images/2024_07_Olympus.webp",
-            "focalPoint": { "x": 50, "y": 50 },
+            "photoId": 1,
             "github": "https://github.com/PolloRollo/ProjectEuler",
             "technologies": ["Mathematics", "Python", "Puzzles"]
         },
@@ -45,8 +42,7 @@
             "category": "class",
             "content": "Content of the second blog post", 
             "raw": "https://raw.githubusercontent.com/PolloRollo/TicketToRide/refs/heads/main/README.md",
-            "image": "/src/assets/images/2024_08_Hiawatha.webp",
-            "focalPoint": { "x": 50, "y": 50 },
+            "photoId": 9,
             "github": "https://github.com/PolloRollo/TicketToRide",
             "technologies": ["Python", "Decision Making"]
         }

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { BentoGrid, BentoItem } from './BentoGrid';
 import ContentCard from './ContentCard';
-import { loadJsonData } from '../lib/dataLoader';
+import { loadJsonData } from '../lib/utils';
 import { siteConfig } from '../config/siteConfig';
 import '../styles/components/RecentPosts.css';
 
@@ -10,9 +10,9 @@ interface Article {
   title: string;
   slug: string;
   category?: string;
-  image?: string;
+  image?: string; // Fallback for backward compatibility
+  photoId?: number; // New: photo ID from photos.json
   keywords?: string[];
-  abstract?: string;
 }
 
 function RecentProjects() {
@@ -56,9 +56,9 @@ function RecentProjects() {
             <BentoItem key={article.id} featured={index === 0}>
               <ContentCard
                 title={article.title}
-                abstract={article.abstract}
                 keywords={article.keywords}
                 image={article.image}
+                photoId={article.photoId}
                 href={href}
                 variant={variant}
                 category={article.category}
@@ -70,7 +70,6 @@ function RecentProjects() {
         <BentoItem>
           <ContentCard
             title={siteConfig.seeMore.projects.title}
-            abstract={siteConfig.seeMore.projects.abstract}
             image={siteConfig.seeMore.projects.image}
             href="/projects"
             variant="default"

@@ -4,10 +4,8 @@ import { BentoGrid, BentoItem } from '../components/BentoGrid';
 import ContentCard from '../components/ContentCard';
 import ProjectsHero from '../components/ProjectsHero';
 import ResearchHero from '../components/ResearchHero';
-import { loadJsonData } from '../lib/dataLoader';
+import { loadJsonData } from '../lib/utils';
 import '../styles/pages/CollectionPage.css';
-import projectsHeroImage from '../assets/images/2024_03_SandyCrack.webp';
-import researchHeroImage from '../assets/images/2024_05_TwilightLake.webp';
 
 interface CollectionPageProps {
   source: string;
@@ -18,7 +16,8 @@ interface Article {
   title: string;
   slug: string;
   category?: string;
-  image?: string;
+  image?: string; // Fallback for backward compatibility
+  photoId?: number; // New: photo ID from photos.json
   keywords?: string[];
   abstract?: string;
 }
@@ -69,17 +68,22 @@ function CollectionPage({ source }: CollectionPageProps) {
   const isProjectsPage = location.pathname === '/projects';
   const isResearchPage = location.pathname === '/research';
 
+  // Use photoId 6 (Sandy Crack) for projects hero, photoId 5 (Twilight Lake) for research hero
+  const projectsHeroPhotoId = 6;
+  const researchHeroPhotoId = 5;
+
   return (
     <div className="collection-page">
       {isProjectsPage && (
         <ProjectsHero 
-          image={projectsHeroImage} 
-          title={getPageTitle()} 
+          photoId={projectsHeroPhotoId}
+          title={getPageTitle()}
+          showAttribution={true}
         />
       )}
       {isResearchPage && (
         <ResearchHero 
-          image={researchHeroImage} 
+          image="/src/assets/images/2024_05_TwilightLake.webp"
           title={getPageTitle()} 
         />
       )}
@@ -99,6 +103,7 @@ function CollectionPage({ source }: CollectionPageProps) {
                 abstract={article.abstract}
                 keywords={article.keywords}
                 image={article.image}
+                photoId={article.photoId}
                 href={href}
                 variant={variant}
                 category={article.category}
