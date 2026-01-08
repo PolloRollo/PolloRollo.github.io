@@ -37,7 +37,7 @@ const personalInfo: PersonalInfo = {
   bio: [
     'Currently studying applied mathematics at the University of Utah with coursework in high-dimensional data analysis, optimization, and reinforcement learning. ',
   ],
-  photoPath: '/src/assets/images/DSC01157.webp'
+  photoPath: '/images/DSC01157.webp'
 };
 
 const skills: Skill[] = [

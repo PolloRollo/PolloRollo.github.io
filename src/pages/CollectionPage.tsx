@@ -82,7 +82,7 @@ function CollectionPage({ source }: CollectionPageProps) {
       )}
       {isResearchPage && (
         <ResearchHero 
-          image="/src/assets/images/2024_05_TwilightLake.webp"
+          image="/images/2024_05_TwilightLake.webp"
           title={getPageTitle()} 
         />
       )}

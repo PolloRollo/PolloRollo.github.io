@@ -1,10 +1,10 @@
 // Site-wide configuration values
 // Update these values to customize the site content
 
-import introImage from '../assets/images/DSC01157.webp';
-import seeMoreImageDefault from '../assets/images/2020_08_Wildflowers.webp';
-import seeMoreImageProjects from '../assets/images/2020_08_Wildflowers.webp';
-import seeMoreImageResearch from '../assets/images/2020_08_Wildflowers.webp';
+const introImage = '/images/DSC01157.webp';
+const seeMoreImageDefault = '/images/2020_08_Wildflowers.webp';
+const seeMoreImageProjects = '/images/2020_08_Wildflowers.webp';
+const seeMoreImageResearch = '/images/2020_08_Wildflowers.webp';
 
 export const siteConfig = {
   // Personal Information

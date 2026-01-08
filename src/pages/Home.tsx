@@ -4,7 +4,7 @@ import IntroSection from '../components/IntroSection';
 import RecentProjects from '../components/RecentProjects';
 import Hero from '../components/Hero';
 import { handleResumeDownload } from '../lib/utils';
-import heroImage from '../assets/images/2020_08_Highline.webp';
+const heroImage = '/images/2020_08_Highline.webp';
 
 interface heroParams {
   image: string

@@ -41,7 +41,7 @@ function ArticlePage({json}: ArticlePageProps) {
   const [article, setArticle] = useState<Article | null>(null); // State to hold the article data
   const [category, setCategory] = useState<string>(''); // State to hold the category
   const [error, setError] = useState<string | null>(null); // State for error handling
-  const [heroImage, setHeroImage] = useState<string>('/src/assets/images/2020_08_Wildflowers.webp');
+  const [heroImage, setHeroImage] = useState<string>('/images/2020_08_Wildflowers.webp');
   const [photoId, setPhotoId] = useState<number | undefined>(undefined);
 
   useEffect(() => {
