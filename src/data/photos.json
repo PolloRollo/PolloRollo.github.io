@@ -53,13 +53,13 @@
       "attributionUrl": "https://pollorollo.github.io/photography/twilight-lake",
       "focalPoint": { "x": 50, "y": 50 },
       "date": "2024-05",
-      "location": "Glacier National Park"
+      "location": "Rockport Reservoir"
     },
     {
       "id": 6,
-      "title": "Sandy Crack",
-      "slug": "sandy-crack",
-      "image": "/src/assets/images/2024_03_SandyCrack.webp",
+      "title": "Park Avenue",
+      "slug": "park-avenue",
+      "image": "/src/assets/images/2024_03_ParkAvenue.webp",
       "attribution": "Photo by David Rollo",
       "focalPoint": { "x": 50, "y": 50 },
       "date": "2024-03",
