@@ -33,7 +33,14 @@
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .hero-content {
+    padding: 0 1.5rem;
+  }
 }
 
 /* Glass Panel Effect - matches background color */
@@ -76,24 +83,28 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid hsl(var(--glass-border));
-  border-radius: var(--radius);
+  border-radius: 0;
   max-width: 56rem; /* Width: 56rem = 896px (adjust to change box width) */
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   padding-top: 1rem; /* Top spacing: 2rem = 32px (spacing from top edge to text) */
   padding-bottom: 2rem; /* Bottom spacing: 2rem = 32px (spacing from buttons to bottom edge) */
-  padding-left: 3rem; /* Left spacing: 2rem = 32px (spacing from left edge to content) */
-  padding-right: 3rem; /* Right spacing: 2rem = 32px (spacing from content to right edge) */
+  padding-left: 1rem; /* Mobile left spacing - minimal for text readability */
+  padding-right: 1rem; /* Mobile right spacing - minimal for text readability */
   animation: fadeIn 0.6s ease-in-out;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
   .hero-text-box {
+    border-radius: var(--radius);
     padding-top: 2rem; /* Keep consistent top spacing */
     padding-bottom: 2rem; /* Keep consistent bottom spacing */
     padding-left: 3rem; /* Desktop left spacing: 3rem = 48px */
     padding-right: 3rem; /* Desktop right spacing: 3rem = 48px */
+    width: auto; /* Remove width: 100% on desktop to respect max-width */
   }
 }
 

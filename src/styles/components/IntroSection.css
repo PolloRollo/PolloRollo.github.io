@@ -10,9 +10,16 @@
 }
 
 .intro-container {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .intro-container {
+    padding: 0 1rem;
+  }
 }
 
 /* Link wrapper - makes entire card clickable */
@@ -44,8 +51,8 @@
 
 .intro-link {
   position: relative;
-  padding: 2rem;
-  border-radius: var(--radius);
+  padding: 2rem 0;
+  border-radius: 0;
   transition: all 0.3s ease-out;
 }
 
@@ -56,6 +63,7 @@
 @media (min-width: 768px) {
   .intro-link {
     padding: 3rem;
+    border-radius: var(--radius);
   }
 }
 

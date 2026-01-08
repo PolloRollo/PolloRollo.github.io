@@ -16,14 +16,12 @@
 
 @media (max-width: 768px) {
   .collection-page {
-    padding: 1rem;
+    padding: 1rem 0;
   }
   
   .collection-page-title {
     margin-top: 6rem;
-  }
-
-  .collection-page-title {
+    padding: 0 1rem;
     font-size: 2rem;
   }
 }

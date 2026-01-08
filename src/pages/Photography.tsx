@@ -59,13 +59,13 @@ function Photography() {
   };
 
   // Use photoId 6 (Sandy Crack) for photography hero
-  const photographyHeroPhotoId = 6;
+  const photographyHeroPhotoId = 10;
 
   return (
     <div className="photography-page">
       <ProjectsHero
         photoId={photographyHeroPhotoId}
-        title="Photography"
+        title="Images"
         showAttribution={true}
       />
       <div className="photography-content">

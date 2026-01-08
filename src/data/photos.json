@@ -3,14 +3,14 @@
   "content": [
     {
       "id": 1,
-      "title": "Mount Olympus",
+      "title": "Mount Olympus Trail",
       "slug": "olympus",
       "image": "/images/2024_07_Olympus.webp",
       "attribution": "Photo by David Rollo",
       "attributionUrl": "https://pollorollo.github.io/photography/olympus",
       "focalPoint": { "x": 50, "y": 50 },
       "date": "2024-07",
-      "location": "Summit of Mount Olympus"
+      "location": "Wasatch Mountains"
     },
     {
       "id": 2,
@@ -40,7 +40,7 @@
       "slug": "wildflowers",
       "image": "/images/2020_08_Wildflowers.webp",
       "attribution": "Photo by David Rollo",
-      "focalPoint": { "x": 50, "y": 50 },
+      "focalPoint": { "x": 50, "y": 40 },
       "date": "2020-08",
       "location": "Glacier National Park"
     },
@@ -51,7 +51,7 @@
       "image": "/images/2024_05_TwilightLake.webp",
       "attribution": "Photo by David Rollo",
       "attributionUrl": "https://pollorollo.github.io/photography/twilight-lake",
-      "focalPoint": { "x": 50, "y": 50 },
+      "focalPoint": { "x": 50, "y": 70 },
       "date": "2024-05",
       "location": "Rockport Reservoir"
     },
@@ -67,13 +67,13 @@
     },
     {
       "id": 7,
-      "title": "Redcliff",
-      "slug": "redcliff",
+      "title": "Cliffs in Kolob Canyon",
+      "slug": "kolob-canyon-cliffs",
       "image": "/images/2021_05_Redcliff.webp",
       "attribution": "Photo by David Rollo",
       "focalPoint": { "x": 50, "y": 70 },
       "date": "2021-05",
-      "location": "Kolob Canyon"
+      "location": "Zion National Park"
     },
     {
       "id": 8,
@@ -94,6 +94,16 @@
       "focalPoint": { "x": 50, "y": 50 },
       "date": "2024-08",
       "location": "Hiawatha Trail"
+    },
+    {
+      "id": 10,
+      "title": "Appalachia",
+      "slug": "appalachia",
+      "image": "/images/2022_07_Shenandoah.webp",
+      "attribution": "Photo by David Rollo",
+      "focalPoint": { "x": 50, "y": 50 },
+      "date": "2022-07",
+      "location": "Shenandoah National Park"
     }
   ]
 }
