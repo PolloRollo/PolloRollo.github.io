@@ -68,9 +68,8 @@ function CollectionPage({ source }: CollectionPageProps) {
   const isProjectsPage = location.pathname === '/projects';
   const isResearchPage = location.pathname === '/research';
 
-  // Use photoId 6 (Sandy Crack) for projects hero, photoId 5 (Twilight Lake) for research hero
+  // Use photoId 6 (Park Avenue) for projects hero
   const projectsHeroPhotoId = 6;
-  const researchHeroPhotoId = 5;
 
   return (
     <div className="collection-page">
