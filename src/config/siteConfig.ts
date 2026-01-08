@@ -1,7 +1,7 @@
 // Site-wide configuration values
 // Update these values to customize the site content
 
-const introImage = '/images/DSC01157.webp';
+const introImage = '/images/2022_02_Engagement.webp';
 const seeMoreImageDefault = '/images/2020_08_Wildflowers.webp';
 const seeMoreImageProjects = '/images/2020_08_Wildflowers.webp';
 const seeMoreImageResearch = '/images/2020_08_Wildflowers.webp';

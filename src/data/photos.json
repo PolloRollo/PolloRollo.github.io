@@ -97,13 +97,13 @@
     },
     {
       "id": 10,
-      "title": "Appalachia",
-      "slug": "appalachia",
-      "image": "/images/2022_07_Shenandoah.webp",
+      "title": "Avalanche Lake",
+      "slug": "avalanche-lake",
+      "image": "/images/2020_08_AvalancheLake.webp",
       "attribution": "Photo by David Rollo",
-      "focalPoint": { "x": 50, "y": 50 },
-      "date": "2022-07",
-      "location": "Shenandoah National Park"
+      "focalPoint": { "x": 50, "y": 45 },
+      "date": "2020-08",
+      "location": "Glacier National Park"
     }
   ]
 }
