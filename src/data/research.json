@@ -2,10 +2,10 @@
     "category": "publications",
     "content": [
         { "id": 1, 
-        "title": "A Reciprocity-Based Method for Improving Community Detection on Directed Friendship Networks", 
+        "title": "FRIENDBRW", 
         "slug": "friend-brw", 
         "link": "Github.com",
-        "image": "link", 
+        "photoId": 4,
         "raw": "https://raw.githubusercontent.com/PolloRollo/FRIENDBRW/refs/heads/main/README.md"}
     ]
 }

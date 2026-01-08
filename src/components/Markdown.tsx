@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import './Markdown.css';  // Styling
+import '../styles/components/Markdown.css';  // Styling
 
 interface MarkdownProps {
   url: string;
@@ -25,7 +25,7 @@ function Markdown( {url} : MarkdownProps) {
     };
 
     fetchReadme();
-  }, []);
+  }, [url]);
 
   if (error) {
     return <div>Error: {error}</div>;

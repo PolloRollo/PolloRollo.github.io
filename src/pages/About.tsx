@@ -1,5 +1,5 @@
 import '../App.css';
-import './About.css';
+import '../styles/pages/About.css';
 
 // ============================================
 // PLACEHOLDER DATA - Replace with your information
@@ -37,7 +37,7 @@ const personalInfo: PersonalInfo = {
   bio: [
     'Currently studying applied mathematics at the University of Utah with coursework in high-dimensional data analysis, optimization, and reinforcement learning. ',
   ],
-  photoPath: '/vite.svg' // Replace with path to your professional photo
+  photoPath: '/src/assets/images/DSC01157.webp'
 };
 
 const skills: Skill[] = [
@@ -46,20 +46,23 @@ const skills: Skill[] = [
   { name: 'Python', icon: 'fab fa-python', category: 'Languages' },
   { name: 'TypeScript', icon: 'fab fa-js-square', category: 'Languages' },
   { name: 'Java', icon: 'fab fa-java', category: 'Languages' },
-  { name: 'Go', icon: 'fab fa-python', category: 'Languages' },
+  { name: 'Go', icon: 'fa-brands fa-golang', category: 'Languages' },
   
-  // Frameworks & Libraries
-  // PyTorch, Pandas, Numpy
-  { name: 'React', icon: 'fab fa-react', category: 'Frameworks' },
-  { name: 'Node.js', icon: 'fab fa-node-js', category: 'Frameworks' },
-  { name: 'Vue.js', icon: 'fab fa-vuejs', category: 'Frameworks' },
-  { name: 'Angular', icon: 'fab fa-angular', category: 'Frameworks' },
+
+  // Data
+  // PyTorch, Pandas, Numpy, PostgreSQL
+  { name: 'PostgreSQL', icon: 'fa-solid fa-table', category: 'Data' },
+  { name: 'Pandas', icon: 'fa-solid fa-chart-column', category: 'Data' },
+  { name: 'Numpy', icon: 'fa-solid fa-chart-line', category: 'Data' },
+  { name: 'PyTorch', icon: 'fa-solid fa-network-wired', category: 'Data' },
   
+
   // Tools & Technologies
+  // Git, React, HTMX, APIs
   { name: 'Git', icon: 'fab fa-git-alt', category: 'Tools' },
-  { name: 'Docker', icon: 'fab fa-docker', category: 'Tools' },
-  { name: 'AWS', icon: 'fab fa-aws', category: 'Tools' },
-  { name: 'Linux', icon: 'fab fa-linux', category: 'Tools' }
+  { name: 'React', icon: 'fab fa-react', category: 'Tools' },
+  { name: 'HTMX', icon: 'fa-solid fa-link', category: 'Tools' },
+  { name: 'APIs', icon: 'fa-solid fa-code', category: 'Tools' }
 ];
 
 const education: TimelineItem[] = [
@@ -68,7 +71,7 @@ const education: TimelineItem[] = [
     title: 'Master of Science in Applied Mathematics',
     organization: 'University of Utah',
     description: [
-      'Specialization: Machine Learning',
+      'Certificate in Deep Learning, Artificial Intelligence, and Robotics (DL-AIR)',
       'Thesis: TBD',
       '4.0 GPA'
     ]
@@ -138,26 +141,18 @@ const interests: Interest[] = [
   },
   {
     name: 'Board Games',
-    icon: 'fas fa-gamepad',
+    icon: 'fa-solid fa-chess',
     description: 'Studying their strategies in simulation only adds to the fun!'
   },
 ];
 
-const resumePath = '/resumes/rollo-resume-2025-12.pdf';
+import { handleResumeDownload } from '../lib/utils';
 
 // ============================================
 // COMPONENT
 // ============================================
 
 function About() {
-  const handleResumeDownload = () => {
-    const link = document.createElement('a');
-    link.href = resumePath;
-    link.download = 'resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
 
   // Group skills by category
   const skillsByCategory = skills.reduce((acc, skill) => {
@@ -183,11 +178,11 @@ function About() {
           <div className="hero-text">
             <h1 className="hero-name">{personalInfo.name}</h1>
             <h2 className="hero-title">{personalInfo.title}</h2>
-            <p className="hero-intro">
-            {personalInfo.bio.map((paragraph, index) => (
-            <p key={index} className="bio-paragraph">{paragraph}</p>
-          ))}
-            </p>
+            <div className="hero-intro">
+              {personalInfo.bio.map((paragraph, index) => (
+                <p key={index} className="bio-paragraph">{paragraph}</p>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -214,13 +209,13 @@ function About() {
 
       {/* Education & Experience Timeline */}
       <section className="about-section about-timeline">
-        <h2 className="section-title">Education & Experience</h2>
+        <h2 className="section-title">Experience & Education</h2>
         <div className="timeline-container">
-          {/* Education */}
+          {/* Experience */}
           <div className="timeline-section">
-            <h3 className="timeline-section-title">Education</h3>
+            <h3 className="timeline-section-title">Experience</h3>
             <div className="timeline">
-              {education.map((item, index) => (
+              {experience.map((item, index) => (
                 <div key={index} className={`timeline-item ${index % 2 === 0 ? 'timeline-left' : 'timeline-right'}`}>
                   <div className="timeline-content">
                     <div className="timeline-date">{item.date}</div>
@@ -236,12 +231,11 @@ function About() {
               ))}
             </div>
           </div>
-
-          {/* Experience */}
+          {/* Education */}
           <div className="timeline-section">
-            <h3 className="timeline-section-title">Experience</h3>
+            <h3 className="timeline-section-title">Education</h3>
             <div className="timeline">
-              {experience.map((item, index) => (
+              {education.map((item, index) => (
                 <div key={index} className={`timeline-item ${index % 2 === 0 ? 'timeline-left' : 'timeline-right'}`}>
                   <div className="timeline-content">
                     <div className="timeline-date">{item.date}</div>

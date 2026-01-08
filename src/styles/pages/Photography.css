@@ -1,0 +1,17 @@
+.photography-page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.photography-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .photography-content {
+    padding: 3rem 2rem;
+  }
+}
+

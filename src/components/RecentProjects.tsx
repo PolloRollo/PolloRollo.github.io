@@ -5,36 +5,32 @@ import { loadJsonData } from '../lib/utils';
 import { siteConfig } from '../config/siteConfig';
 import '../styles/components/RecentPosts.css';
 
-interface RecentPostsProps {
-  title: string;
-  count: number;
-  source: string;
-}
-
 interface Article {
   id: number;
   title: string;
   slug: string;
-  image?: string;
+  category?: string;
+  image?: string; // Fallback for backward compatibility
+  photoId?: number; // New: photo ID from photos.json
   keywords?: string[];
-  abstract?: string;
 }
 
-function RecentPosts({ title, count, source }: RecentPostsProps) {
+function RecentProjects() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [category, setCategory] = useState<string>('');
 
   useEffect(() => {
-    // Load articles from JSON file using data loader
-    loadJsonData(source)
+    // Load projects from JSON file using data loader
+    loadJsonData('projects.json')
       .then((data) => {
-        setArticles(data.content.slice(0, count)); // Get the most recent items
+        // Get only the 2 most recent projects
+        setArticles(data.content.slice(0, 2));
         setCategory(data.category);
       })
       .catch((error) => {
-        console.error('Error loading articles:', error);
+        console.error('Error loading projects:', error);
       });
-  }, [source, count]);
+  }, []);
 
   if (articles.length === 0) {
     return null;
@@ -44,47 +40,45 @@ function RecentPosts({ title, count, source }: RecentPostsProps) {
     return cat === 'projects' ? '/projects' : cat === 'research' ? '/research' : `/${cat}`;
   };
 
-  // Check if we should show "See more" card (for publications/research)
-  const showSeeMore = source === 'research.json';
-  const totalItemCount = articles.length + (showSeeMore ? 1 : 0);
+  // Include "See more" card in count
+  const totalItemCount = articles.length + 1;
 
   return (
     <div className="recent-posts">
-      <h2 className="recent-posts-title">{title}</h2>
+      <h2 className="recent-posts-title">Recent Projects</h2>
       <BentoGrid itemCount={totalItemCount}>
         {articles.map((article, index) => {
           const href = `${getCategoryPath(category)}/${article.slug}`;
-          // Make first item featured if we have enough items
-          const variant = index === 0 && articles.length >= 3 ? 'featured' : 'default';
+          // Make first item featured (large)
+          const variant = index === 0 ? 'featured' : 'default';
           
           return (
-            <BentoItem key={article.id} featured={variant === 'featured'}>
+            <BentoItem key={article.id} featured={index === 0}>
               <ContentCard
                 title={article.title}
-                abstract={article.abstract}
                 keywords={article.keywords}
                 image={article.image}
+                photoId={article.photoId}
                 href={href}
                 variant={variant}
-                category={category}
+                category={article.category}
               />
             </BentoItem>
           );
         })}
-        {/* "See more" card for publications */}
-        {showSeeMore && (
-          <BentoItem>
-            <ContentCard
-              title={siteConfig.seeMore.research.title}
-              image={siteConfig.seeMore.research.image}
-              href="/research"
-              variant="default"
-            />
-          </BentoItem>
-        )}
+        {/* "See more" card */}
+        <BentoItem>
+          <ContentCard
+            title={siteConfig.seeMore.projects.title}
+            image={siteConfig.seeMore.projects.image}
+            href="/projects"
+            variant="default"
+          />
+        </BentoItem>
       </BentoGrid>
     </div>
   );
 }
 
-export default RecentPosts;
+export default RecentProjects;
+

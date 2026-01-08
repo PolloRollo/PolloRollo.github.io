@@ -1,0 +1,344 @@
+/* About Page Styles */
+
+.about-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: hsl(var(--foreground));
+}
+
+.about-section {
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2.5em;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: hsl(var(--foreground));
+  border-bottom: 2px solid hsl(var(--primary));
+  padding-bottom: 1rem;
+  font-family: var(--font-serif);
+}
+
+/* Hero Section */
+.about-hero {
+  margin-bottom: 2rem;
+  padding: 4rem 2rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-photo-container {
+  flex-shrink: 0;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid hsl(var(--border));
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center; /* Adjust this to pan: e.g., "top left", "30% 40%", "center top" */
+  transform: scale(3.5); /* Adjust this to zoom: 1.0 = no zoom, 1.5 = 50% zoom, 2.0 = 100% zoom, etc. */
+  transform-origin: 09% 30%; /* Adjust this to change zoom center: "30% 40%" matches object-position */
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+
+.hero-name {
+  font-size: 3.5em;
+  margin: 0 0 0.5rem 0;
+  color: hsl(var(--foreground));
+}
+
+.hero-title {
+  font-size: 1.8em;
+  margin: 0 0 1rem 0;
+  color: hsl(var(--secondary));
+  font-weight: 500;
+}
+
+.hero-intro {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Bio Section */
+.about-bio {
+  text-align: left;
+}
+
+.bio-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.bio-paragraph {
+  font-size: 1.15em;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: hsl(var(--foreground));
+}
+
+/* Skills Section */
+.about-skills {
+  text-align: left;
+  margin-top: 2rem;
+}
+
+.skills-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.skill-category {
+  margin-bottom: 0;
+}
+
+.category-title {
+  font-size: 1.8em;
+  margin-bottom: 1.5rem;
+  color: hsl(var(--primary));
+  border-left: 6px solid hsl(var(--secondary));
+  padding-left: 1rem;
+  font-family: var(--font-serif);
+}
+
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 0;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background-color: hsl(var(--tag-bg));
+  border-radius: var(--radius);
+  border: 1px solid hsl(var(--border));
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.skill-item:hover {
+  background-color: hsl(var(--card-hover));
+  border-color: hsl(var(--secondary));
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.skill-icon {
+  font-size: 1.2em;
+  color: hsl(var(--primary));
+  flex-shrink: 0;
+}
+
+.skill-name {
+  font-size: 1.1em;
+  font-weight: 500;
+  color: hsl(var(--foreground));
+}
+
+/* Timeline Section */
+.about-timeline {
+  text-align: left;
+}
+
+.timeline-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.timeline-section {
+  margin-bottom: 4rem;
+}
+
+.timeline-section-title {
+  font-size: 2em;
+  margin-bottom: 2rem;
+  color: hsl(var(--primary));
+  text-align: center;
+  font-family: var(--font-serif);
+}
+
+.timeline {
+  position: relative;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.timeline-content {
+  background-color: hsl(var(--tag-bg));
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 1px solid hsl(var(--border));
+  border-left: 6px solid hsl(var(--primary));
+  transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+  background-color: hsl(var(--card-hover));
+  border-color: hsl(var(--primary));
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-date {
+  font-size: 1em;
+  color: hsl(var(--primary));
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-title {
+  font-size: 1.6em;
+  margin: 0 0 0.5rem 0;
+  color: hsl(var(--foreground));
+  font-family: var(--font-serif);
+}
+
+.timeline-organization {
+  font-size: 1.15em;
+  color: hsl(var(--secondary));
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.timeline-description {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-description li {
+  margin-bottom: 0.75rem;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.6;
+}
+
+/* Interests Section */
+.about-interests {
+  text-align: left;
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.interest-item {
+  background-color: hsl(var(--tag-bg));
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  border: 1px solid hsl(var(--border));
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.interest-item:hover {
+  background-color: hsl(var(--card-hover));
+  border-color: hsl(var(--primary));
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.interest-icon {
+  font-size: 3.5em;
+  color: hsl(var(--secondary));
+  margin-bottom: 1rem;
+}
+
+.interest-name {
+  font-size: 1.5em;
+  margin: 0 0 0.5rem 0;
+  color: hsl(var(--foreground));
+  font-family: var(--font-serif);
+}
+
+.interest-description {
+  font-size: 1em;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Resume Section */
+.about-resume {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.resume-button {
+  padding: 1.2rem 3rem;
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #ffffff !important;
+  background: hsl(209 50% 35%) !important;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: inherit;
+}
+
+.resume-button:hover {
+  background-color: hsl(209 50% 30%) !important;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.resume-button:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 3rem 1rem;
+  }
+  
+  .hero-name {
+    font-size: 2.5em;
+  }
+
+  .timeline-content:hover {
+    transform: none;
+  }
+}
+

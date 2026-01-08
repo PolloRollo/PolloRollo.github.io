@@ -22,3 +22,27 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Images
+# Only list images that are not used in the project
+# 2020_08_Highline.webp
+2020_08_LoganPass.webp
+# 2020_08_Wildflowers.webp
+# 2020_09_Pond.webp
+2020_09_Sunset.webp
+2021_05_Kolob.webp
+# 2021_05_Redcliff.webp
+2021_07_RockySummit.webp
+2023_10_Beach.webp
+2023_10_BeachBird.webp
+2024_03_SandDunePass.webp
+# 2024_03_SandyCrack.webp
+2024_05_TwilightLake.webp
+# 2024_07_Olympus.webp
+# 2024_08_Hiawatha.webp
+# DSC01157.webp
+IMG_0453.webp
+IMG_2137 2.webp
+IMG_3284 2.webp
+IMG_5922.webp
+IMG_7309.webp
