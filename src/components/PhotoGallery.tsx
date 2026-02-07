@@ -5,8 +5,7 @@ interface Photo {
   id: number;
   title: string;
   slug: string;
-  image: string;
-  cloudinary?: string;
+  cloudinary: string;
   attribution?: string;
   attributionUrl?: string;
   date?: string;

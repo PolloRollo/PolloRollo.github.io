@@ -9,8 +9,7 @@ interface Photo {
   id: number;
   title: string;
   slug: string;
-  image?: string; // Fallback for backward compatibility
-  cloudinary?: string; // Cloudinary public ID (preferred)
+  cloudinary: string;
   attribution?: string;
   attributionUrl?: string;
   date?: string;

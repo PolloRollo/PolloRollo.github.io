@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Markdown from "../components/Markdown";
-import { loadJsonData, getPhotoById } from "../lib/utils";
+import { loadJsonData } from "../lib/utils";
 import ProjectsHero from "../components/ProjectsHero";
 import ResearchHero from "../components/ResearchHero";
 import '../styles/pages/ArticlePage.css';
@@ -54,11 +54,6 @@ function ArticlePage({json}: ArticlePageProps) {
           // Resolve photo ID if present
           if (foundArticle.photoId) {
             setPhotoId(foundArticle.photoId);
-            getPhotoById(foundArticle.photoId).then(photo => {
-              if (photo) {
-                setFallbackImage(photo.image);
-              }
-            });
           } else if (foundArticle.image) {
             setFallbackImage(foundArticle.image);
             setPhotoId(undefined);
@@ -83,7 +78,7 @@ function ArticlePage({json}: ArticlePageProps) {
 
   return (
     <>
-      {isProjects ? (
+      {isProjects && photoId ? (
         <ProjectsHero 
           photoId={photoId}
           title={article.title}

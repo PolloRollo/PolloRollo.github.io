@@ -1,4 +1,6 @@
 import { useState } from 'react';
+// react-plotly is a large library, consider alternatives
+// Such as recharts, victory, or chart.js.
 import Plot from 'react-plotly.js';
 import Button from '../components/Button';
 // import { TextField} from '@mui/material';
