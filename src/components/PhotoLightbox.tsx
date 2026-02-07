@@ -1,11 +1,14 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import '../styles/components/PhotoLightbox.css';
+import cld from '../lib/cloudinary';
+import { AdvancedImage } from '@cloudinary/react';
 
 interface Photo {
   id: number;
   title: string;
   slug: string;
   image: string;
+  cloudinary?: string;
   attribution?: string;
   attributionUrl?: string;
   date?: string;
@@ -30,6 +33,14 @@ const PhotoLightbox = ({
   onNext,
   onPrevious,
 }: PhotoLightboxProps) => {
+  const [cloudinaryId, setCloudinaryId] = useState<string | undefined>(undefined);
+
+  useEffect(() => {
+    if (photo) {
+      setCloudinaryId(photo.cloudinary);
+    }
+  }, [photo]);
+
   useEffect(() => {
     if (!isOpen) return;
 
@@ -104,8 +115,8 @@ const PhotoLightbox = ({
         )}
 
         <div className="photo-lightbox-image-container">
-          <img
-            src={photo.image}
+          <AdvancedImage 
+            cldImg={cld.image(cloudinaryId)} 
             alt={photo.title}
             className="photo-lightbox-image"
           />

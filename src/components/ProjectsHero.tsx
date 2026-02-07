@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import '../styles/components/ProjectsHero.css';
 import { getPhotoById, Photo } from '../lib/utils';
+import cld from '../lib/cloudinary'; // Import the singleton
 
 interface FocalPoint {
   x: number; // 0-100
@@ -25,7 +26,14 @@ const ProjectsHero = ({ photoId, image, title, focalPoint, showAttribution = fal
       getPhotoById(photoId).then(p => {
         if (p) {
           setPhoto(p);
-          setPhotoImage(p.image);
+          // Generate Cloudinary URL from cloudinaryId
+          if (p.cloudinary) {
+            const cloudinaryUrl = cld.image(p.cloudinary).toURL();
+            setPhotoImage(cloudinaryUrl);
+          } else if (p.image) {
+            // Fallback to regular image if cloudinary not available
+            setPhotoImage(p.image);
+          }
           // Use photo's focalPoint if not overridden
           const effectiveFocalPoint = focalPoint || p.focalPoint;
           if (effectiveFocalPoint) {

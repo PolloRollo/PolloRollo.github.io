@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { siteConfig } from "../config/siteConfig";
 import '../styles/components/IntroSection.css';
+import cld from '../lib/cloudinary';
+import { AdvancedImage } from '@cloudinary/react';
 
 interface IntroSectionProps {
   image?: string;
@@ -27,8 +29,8 @@ const IntroSection = ({
           <div className="intro-content">
             {image && (
               <div className="intro-image-wrapper">
-                <img
-                  src={image}
+                <AdvancedImage
+                  cldImg={cld.image(image)}
                   alt="Profile"
                   className="intro-image"
                 />

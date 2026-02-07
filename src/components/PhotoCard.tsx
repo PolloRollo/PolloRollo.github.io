@@ -1,10 +1,14 @@
+import { useState, useEffect } from 'react';
 import '../styles/components/PhotoCard.css';
+import cld from '../lib/cloudinary';
+import { AdvancedImage } from '@cloudinary/react';
 
 interface Photo {
   id: number;
   title: string;
   slug: string;
   image: string;
+  cloudinary?: string;
   attribution?: string;
   attributionUrl?: string;
   date?: string;
@@ -18,6 +22,14 @@ interface PhotoCardProps {
 }
 
 const PhotoCard = ({ photo, onClick }: PhotoCardProps) => {
+  const [cloudinaryId, setCloudinaryId] = useState<string | undefined>(undefined);
+
+  useEffect(() => {
+    if (photo) {
+      setCloudinaryId(photo.cloudinary);
+    }
+  }, [photo]);
+
   const handleClick = () => {
     onClick(photo);
   };
@@ -39,8 +51,8 @@ const PhotoCard = ({ photo, onClick }: PhotoCardProps) => {
       aria-label={`View ${photo.title}`}
     >
       <div className="photo-card-image-container">
-        <img
-          src={photo.image}
+        <AdvancedImage 
+          cldImg={cld.image(cloudinaryId)} 
           alt={photo.title}
           className="photo-card-image"
           loading="lazy"

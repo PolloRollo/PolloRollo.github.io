@@ -4,10 +4,8 @@ import IntroSection from '../components/IntroSection';
 import RecentProjects from '../components/RecentProjects';
 import Hero from '../components/Hero';
 import { handleResumeDownload } from '../lib/utils';
-const heroImage = '/images/2020_08_Highline.webp';
 
 interface heroParams {
-  image: string
   title1: string
   title2: string
   subtitle: string
@@ -22,7 +20,6 @@ interface heroParams {
 }
 
 const heroParams: heroParams = {
-  image: heroImage,
   title1: "Student &",
   title2: "Developer",
   subtitle: "Experimenting with tools for turning ideas into code.",
@@ -44,7 +41,6 @@ function Home() {
     <div className='homepage'>
       <Hero 
         photoId={homeHeroPhotoId}
-        image={heroImage}
         title={<>{heroParams.title1} <br /> 
         <span className="text-primary">{heroParams.title2}</span>
         </>}

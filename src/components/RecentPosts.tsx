@@ -76,7 +76,7 @@ function RecentPosts({ title, count, source }: RecentPostsProps) {
           <BentoItem>
             <ContentCard
               title={siteConfig.seeMore.research.title}
-              image={siteConfig.seeMore.research.image}
+              photoId={siteConfig.seeMore.research.photoId}
               href="/research"
               variant="default"
             />

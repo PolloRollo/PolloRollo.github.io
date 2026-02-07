@@ -10,8 +10,7 @@ interface Article {
   title: string;
   slug: string;
   category?: string;
-  image?: string; // Fallback for backward compatibility
-  photoId?: number; // New: photo ID from photos.json
+  photoId?: number; // Photo ID from photos.json for Cloudinary
   keywords?: string[];
 }
 
@@ -57,7 +56,6 @@ function RecentProjects() {
               <ContentCard
                 title={article.title}
                 keywords={article.keywords}
-                image={article.image}
                 photoId={article.photoId}
                 href={href}
                 variant={variant}
@@ -70,7 +68,7 @@ function RecentProjects() {
         <BentoItem>
           <ContentCard
             title={siteConfig.seeMore.projects.title}
-            image={siteConfig.seeMore.projects.image}
+            photoId={siteConfig.seeMore.projects.photoId}
             href="/projects"
             variant="default"
           />

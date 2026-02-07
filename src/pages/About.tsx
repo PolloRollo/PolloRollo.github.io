@@ -1,5 +1,8 @@
 import '../App.css';
 import '../styles/pages/About.css';
+import cld from '../lib/cloudinary';
+import { siteConfig } from '../config/siteConfig';
+import { AdvancedImage } from '@cloudinary/react';
 
 // ============================================
 // PLACEHOLDER DATA - Replace with your information
@@ -9,7 +12,7 @@ interface PersonalInfo {
   name: string;
   title: string;
   bio: string[];
-  photoPath: string;
+  photoPath: string; // Cloudinary public ID
 }
 
 interface Skill {
@@ -37,7 +40,7 @@ const personalInfo: PersonalInfo = {
   bio: [
     'Currently studying applied mathematics at the University of Utah with coursework in high-dimensional data analysis, optimization, and reinforcement learning. ',
   ],
-  photoPath: '/images/2022_02_Engagement.webp'
+  photoPath: siteConfig.personal.profileImage // Cloudinary public ID
 };
 
 const skills: Skill[] = [
@@ -169,8 +172,8 @@ function About() {
       <section className="about-hero">
         <div className="hero-content">
           <div className="hero-photo-container">
-            <img 
-              src={personalInfo.photoPath} 
+            <AdvancedImage 
+              cldImg={cld.image(personalInfo.photoPath)} 
               alt={personalInfo.name}
               className="hero-photo"
             />

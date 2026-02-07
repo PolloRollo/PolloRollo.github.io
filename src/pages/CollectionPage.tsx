@@ -16,8 +16,7 @@ interface Article {
   title: string;
   slug: string;
   category?: string;
-  image?: string; // Fallback for backward compatibility
-  photoId?: number; // New: photo ID from photos.json
+  photoId?: number; // Photo ID from photos.json for Cloudinary
   keywords?: string[];
   abstract?: string;
 }
@@ -101,7 +100,6 @@ function CollectionPage({ source }: CollectionPageProps) {
                 title={article.title}
                 abstract={article.abstract}
                 keywords={article.keywords}
-                image={article.image}
                 photoId={article.photoId}
                 href={href}
                 variant={variant}

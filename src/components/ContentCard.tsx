@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { siteConfig } from '../config/siteConfig';
 import { getPhotoById } from '../lib/utils';
+import cld from '../lib/cloudinary'; 
+import { AdvancedImage } from '@cloudinary/react';
 import '../styles/components/ContentCard.css';
 
 interface ContentCardProps {
@@ -18,25 +20,22 @@ interface ContentCardProps {
 const ContentCard = ({
   title,
   keywords = [],
-  image,
   photoId,
   href,
   variant = "default",
   category,
 }: ContentCardProps) => {
-  const [resolvedImage, setResolvedImage] = useState<string | undefined>(image);
+  const [cloudinaryId, setCloudinaryId] = useState<string | undefined>(undefined);
 
   useEffect(() => {
     if (photoId) {
       getPhotoById(photoId).then(photo => {
         if (photo) {
-          setResolvedImage(photo.image);
+          setCloudinaryId(photo.cloudinary);
         }
       });
-    } else if (image) {
-      setResolvedImage(image);
     }
-  }, [photoId, image]);
+  }, [photoId]);
 
   // Get category config if category exists
   const categoryConfig = category && siteConfig.projectCategories[category as keyof typeof siteConfig.projectCategories];
@@ -71,14 +70,9 @@ const ContentCard = ({
     return (
       <Link to={href} className="content-card content-card-compact" data-category={category}>
         <article className="content-card-compact-inner">
-          {resolvedImage && (
+          {cloudinaryId && (
             <div className="content-card-image-compact">
-              <img
-                src={resolvedImage}
-                alt={title}
-                className="content-card-image"
-                loading="lazy"
-              />
+              <AdvancedImage cldImg={cld.image(cloudinaryId)} className="content-card-image" />
             </div>
           )}
           {renderCategoryBadge()}
@@ -105,14 +99,9 @@ const ContentCard = ({
     return (
       <Link to={href} className="content-card content-card-featured" data-category={category}>
         <article className="content-card-featured-inner">
-          {resolvedImage && (
+          {cloudinaryId && (
             <div className="content-card-image-featured">
-              <img
-                src={resolvedImage}
-                alt={title}
-                className="content-card-image"
-                loading="lazy"
-              />
+              <AdvancedImage cldImg={cld.image(cloudinaryId)} className="content-card-image" />
             </div>
           )}
           {renderCategoryBadge()}
@@ -141,14 +130,9 @@ const ContentCard = ({
   return (
     <Link to={href} className="content-card content-card-default" data-category={category}>
       <article className="content-card-default-inner">
-        {resolvedImage && (
+        {cloudinaryId && (
           <div className="content-card-image-default">
-            <img
-              src={resolvedImage}
-              alt={title}
-              className="content-card-image"
-              loading="lazy"
-            />
+            <AdvancedImage cldImg={cld.image(cloudinaryId)} className="content-card-image" />
           </div>
         )}
         {renderCategoryBadge()}

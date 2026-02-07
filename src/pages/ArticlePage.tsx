@@ -28,8 +28,8 @@ interface Article {
   title: string;
   slug: string;
   raw: string;
-  image?: string; // Fallback for backward compatibility
-  photoId?: number; // New: photo ID from photos.json
+  image?: string; // Fallback for backward compatibility (used by ResearchHero)
+  photoId?: number; // Photo ID from photos.json for Cloudinary
   focalPoint?: FocalPoint; // Deprecated, use photo's focalPoint instead
   github?: string;
   paper?: string;
@@ -41,8 +41,8 @@ function ArticlePage({json}: ArticlePageProps) {
   const [article, setArticle] = useState<Article | null>(null); // State to hold the article data
   const [category, setCategory] = useState<string>(''); // State to hold the category
   const [error, setError] = useState<string | null>(null); // State for error handling
-  const [heroImage, setHeroImage] = useState<string>('/images/2020_08_Wildflowers.webp');
   const [photoId, setPhotoId] = useState<number | undefined>(undefined);
+  const [fallbackImage, setFallbackImage] = useState<string | undefined>(undefined);
 
   useEffect(() => {
     loadJsonData(json)
@@ -56,11 +56,11 @@ function ArticlePage({json}: ArticlePageProps) {
             setPhotoId(foundArticle.photoId);
             getPhotoById(foundArticle.photoId).then(photo => {
               if (photo) {
-                setHeroImage(photo.image);
+                setFallbackImage(photo.image);
               }
             });
           } else if (foundArticle.image) {
-            setHeroImage(foundArticle.image);
+            setFallbackImage(foundArticle.image);
             setPhotoId(undefined);
           }
         } else {
@@ -86,12 +86,11 @@ function ArticlePage({json}: ArticlePageProps) {
       {isProjects ? (
         <ProjectsHero 
           photoId={photoId}
-          image={heroImage}
           title={article.title}
           showAttribution={true}
         />
       ) : (
-        <ResearchHero image={heroImage} title={article.title} />
+        <ResearchHero image={fallbackImage || '/images/2020_08_Wildflowers.webp'} title={article.title} />
       )}
       <div className="article-page">
         {/* GitHub Link, Paper Link, and Technologies Section */}

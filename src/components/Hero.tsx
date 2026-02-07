@@ -2,6 +2,8 @@ import { ReactNode, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import '../styles/components/Hero.css';
 import { getPhotoById, Photo } from '../lib/utils';
+import cld from '../lib/cloudinary'; // Import the singleton
+import { AdvancedImage } from '@cloudinary/react';
 
 interface HeroButton {
   text: string;
@@ -32,18 +34,16 @@ const Hero = ({
   showAttribution = false,
 }: HeroProps) => {
   const [photo, setPhoto] = useState<Photo | null>(null);
-  const [heroImage, setHeroImage] = useState<string>('');
+  const [cloudinaryId, setCloudinaryId] = useState<string | undefined>(undefined);
 
   useEffect(() => {
     if (photoId) {
       getPhotoById(photoId).then(p => {
         if (p) {
           setPhoto(p);
-          setHeroImage(p.image);
+          setCloudinaryId(p.cloudinary);
         }
       });
-    } else if (image) {
-      setHeroImage(image);
     }
   }, [photoId, image]);
 
@@ -51,7 +51,7 @@ const Hero = ({
     <section className="hero-section">
       {/* Background Image */}
       <div className="hero-background">
-        <img src={heroImage} alt="Hero background" />
+        <AdvancedImage cldImg={cld.image(cloudinaryId)} />
         <div className="hero-overlay" />
         {showAttribution && photo && photo.attribution && (
           <div className="hero-attribution">

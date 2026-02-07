@@ -1,10 +1,11 @@
 // Site-wide configuration values
 // Update these values to customize the site content
 
-const introImage = '/images/2022_02_Engagement.webp';
-const seeMoreImageDefault = '/images/2020_08_Wildflowers.webp';
-const seeMoreImageProjects = '/images/2020_08_Wildflowers.webp';
-const seeMoreImageResearch = '/images/2020_08_Wildflowers.webp';
+const introImage = '2022_02_Engagement';
+// Photo IDs from src/data/photos.json
+const seeMorePhotoIdDefault = 4; // Wildflowers
+const seeMorePhotoIdProjects = 4; // Wildflowers
+const seeMorePhotoIdResearch = 4; // Wildflowers
 
 export const siteConfig = {
   // Personal Information
@@ -33,17 +34,17 @@ export const siteConfig = {
   seeMore: {
     // Default seeMore card settings
     default: {
-      image: seeMoreImageDefault,
+      photoId: seeMorePhotoIdDefault,
       title: 'See more',
     },
     // Projects page seeMore card
     projects: {
-      image: seeMoreImageProjects,
+      photoId: seeMorePhotoIdProjects,
       title: 'View more projects',
     },
     // Research page seeMore card
     research: {
-      image: seeMoreImageResearch,
+      photoId: seeMorePhotoIdResearch,
       title: 'See more',
     },
   },
