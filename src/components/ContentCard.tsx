@@ -29,7 +29,7 @@ const ContentCard = ({
 
   useEffect(() => {
     if (photoId) {
-      getPhotoById(photoId).then(photo => {
+      void getPhotoById(photoId).then(photo => {
         if (photo) {
           setCloudinaryId(photo.cloudinary);
         }

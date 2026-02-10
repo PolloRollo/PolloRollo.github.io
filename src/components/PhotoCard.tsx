@@ -57,12 +57,12 @@ const PhotoCard = ({ photo, onClick }: PhotoCardProps) => {
           loading="lazy"
         />
         <div className="photo-card-overlay">
-          {(photo.attribution || photo.title || photo.date) && (
+          {((photo.attribution ?? photo.title ?? photo.date) != null) && (
             <div className="photo-card-attribution">
               {photo.title && (
                 <div className="photo-card-title">{photo.title}</div>
               )}
-              {(photo.date || photo.location) && (
+              {((photo.date ?? photo.location) != null) && (
                 <div className="photo-card-meta">
                   {photo.date && <span>{photo.date}</span>}
                   {photo.date && photo.location && <span> • </span>}

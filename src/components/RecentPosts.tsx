@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { BentoGrid, BentoItem } from './BentoGrid';
 import ContentCard from './ContentCard';
-import { loadJsonData } from '../lib/utils';
+import { loadJsonData, JsonDataFile, Article as ArticleType } from '../lib/utils';
 import { siteConfig } from '../config/siteConfig';
 import '../styles/components/RecentPosts.css';
 
@@ -28,8 +28,9 @@ function RecentPosts({ title, count, source }: RecentPostsProps) {
     // Load articles from JSON file using data loader
     loadJsonData(source)
       .then((data) => {
-        setArticles(data.content.slice(0, count)); // Get the most recent items
-        setCategory(data.category);
+        const typedData = data as JsonDataFile<ArticleType>;
+        setArticles((typedData.content as Article[]).slice(0, count)); // Get the most recent items
+        setCategory(typedData.category);
       })
       .catch((error) => {
         console.error('Error loading articles:', error);

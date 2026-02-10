@@ -15,22 +15,22 @@ const RockPaperScissors: React.FC = () => {
   const [userStrategyRock, setUserStrategyRock] = useState<number>(20)
   const [userStrategyPaper, setUserStrategyPaper] = useState<number>(30)
   const [userStrategyScissors, setUserStrategyScissors] = useState<number>(50)
-  const [computerHistory, setComputerHistory] = useState<{[key: string]: number}>({'rock': 0, 'paper': 0, 'scissors': 0})
-  const [results, setResults] = useState<{ [key: string]: number }>({'wins': 0, 'ties': 0, 'loss': 0})
+  const [computerHistory, setComputerHistory] = useState<Record<string, number>>({'rock': 0, 'paper': 0, 'scissors': 0})
+  const [results, setResults] = useState<Record<string, number>>({'wins': 0, 'ties': 0, 'loss': 0})
   const [history, setHistory] = useState<Result[]>([]);
   const [a, setA] = useState<number>(Math.random());
   const [b, setB]= useState<number>(Math.random());
   // other variables
-  const exploreVal: number = 5
-  const exploitVal: number = 20
-  const dict: { [key: string]: number } = {'rock': 0, "paper": 1, 'scissors': 2};
+  const exploreVal = 5
+  const exploitVal = 20
+  const dict: Record<string, number> = {'rock': 0, "paper": 1, 'scissors': 2};
 
   function handleUserChoice(userChoice: string) {
-      let newResult: Result = playGame(userChoice)
+      const newResult: Result = playGame(userChoice)
       // Update game history
       const newHistory = [...history, newResult];
       setHistory(newHistory);
-  };
+  }
   
   function playGame(userChoice: string) {
     const compNum = Math.random()
@@ -54,26 +54,26 @@ const RockPaperScissors: React.FC = () => {
   }
   
   const getResult = (userChoice: string, computerChoice: string): string => {
-    var choiceSum: number = dict[userChoice] - dict[computerChoice] + 3
+    const choiceSum: number = dict[userChoice] - dict[computerChoice] + 3
     if (choiceSum % 3 == 0){ return 'tie';
     } else if (choiceSum % 3 == 1){return 'win'
     } else {return 'loss'}
-    };
+  }
 
   const simulate = () => {
     // Ask for strategy values
     // setUserStrategy({'rock': 50, 'paper': 30, 'scissors': 20})
     console.log(userStrategyRock)
-    let newResults: Result[] = []
+    const newResults: Result[] = []
     while (results.wins + results.loss < exploitVal) {
-      var randNum = Math.random() * 100;
+      const randNum = Math.random() * 100;
       const userRandomChoice: string = randNum < userStrategyRock ? 'rock' : randNum > 100 - userStrategyPaper ? 'paper' : 'scissors';
       
-      let newResult: Result = playGame(userRandomChoice)
+      const newResult: Result = playGame(userRandomChoice)
       newResults.push(newResult)
     }
     // Update game history
-    history.push.apply(history, newResults);
+    history.push(...newResults);
     setHistory(history);
   }
 
@@ -91,7 +91,7 @@ const RockPaperScissors: React.FC = () => {
 
 
   // Conditional rendering
-  const thresholdRendering = (results: { [key: string]: number }) => {
+  const thresholdRendering = (results: Record<string, number>) => {
     if (results.wins + results.loss < exploreVal) {
       return <div>
       <button onClick={() => handleUserChoice('rock')}>Rock</button>
@@ -152,7 +152,7 @@ const RockPaperScissors: React.FC = () => {
       <p> Rock: {Math.round(Math.min(a, b) * 100)}, Paper: {100 - Math.round(Math.max(a, b) * 100)}, Scissors: {Math.round((Math.max(a, b) - Math.min(a,b))* 100)}</p>
       
       <h2>Computer Choices</h2>
-      <p>Rock: {computerHistory['rock']}, Paper: {computerHistory['paper']}, Scissors: {computerHistory['scissors']}</p>
+      <p>Rock: {computerHistory.rock}, Paper: {computerHistory.paper}, Scissors: {computerHistory.scissors}</p>
       <button onClick={() => resetGame()}>Reset</button>
       <h2>Stats:</h2>
       <ul>

@@ -19,19 +19,19 @@ function ZeroDim() {
     let S = 1 - 1/totalPopulation;
     let I = 1/totalPopulation;
     let R = 0;
-    let dt = .5;
-    let steps = 25;
-    let SArray: number[] = [];
-    let IArray: number[] = [];
-    let RArray: number[] = [];
+    const dt = .5;
+    const steps = 25;
+    const SArray: number[] = [];
+    const IArray: number[] = [];
+    const RArray: number[] = [];
 
     for (let i = 0; i < steps; i++) {
       SArray.push(S);
       IArray.push(I);
       RArray.push(R);
-      let S_prime = transmissionCoefficient * S * I;
+      const S_prime = transmissionCoefficient * S * I;
       //let I_prime = transmissionCoefficient * S * I - recoveryRate * I;
-      let R_prime = recoveryRate * I;
+      const R_prime = recoveryRate * I;
       S -= S_prime * dt;
       I += S_prime * dt - R_prime *dt;
       R += R_prime * dt;
@@ -47,19 +47,19 @@ function ZeroDim() {
       <input
         type="number"
         value={transmissionCoefficient}
-        onChange={(e: any) => setTransmissionCoefficient(Number(e.target.value))}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setTransmissionCoefficient(Number(e.target.value))}
       /></label>
       <label>Recovery Rate
       <input
         type="number"
         value={recoveryRate}
-        onChange={(e: any) => setRecoveryRate(Number(e.target.value))}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setRecoveryRate(Number(e.target.value))}
       /></label>
       <label>Total Population
       <input
         type="number"
         value={totalPopulation}
-        onChange={(e: any) => setTotalPopulation(Number(e.target.value))}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setTotalPopulation(Number(e.target.value))}
       /></label>
       <Button 
           buttonStyle='btn--outline'

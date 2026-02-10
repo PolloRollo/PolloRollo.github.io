@@ -13,13 +13,39 @@ import projectsJson from '../data/projects.json';
 import researchJson from '../data/research.json';
 import photosJson from '../data/photos.json';
 
-const dataMap: Record<string, any> = {
-  'projects.json': projectsJson,
-  'research.json': researchJson,
-  'photos.json': photosJson,
+// Type definitions for JSON data structures
+export interface JsonDataFile<T> {
+  category: string;
+  content: T[];
+}
+
+export interface Article {
+  id: number;
+  title: string;
+  slug: string;
+  raw: string;
+  image?: string;
+  photoId?: number;
+  focalPoint?: { x: number; y: number };
+  github?: string;
+  paper?: string;
+  technologies?: string[];
+  category?: string;
+  content?: string;
+  link?: string;
+}
+
+type ProjectsData = JsonDataFile<Article>;
+type ResearchData = JsonDataFile<Article>;
+type PhotosData = JsonDataFile<Photo>;
+
+const dataMap: Record<string, ProjectsData | ResearchData | PhotosData> = {
+  'projects.json': projectsJson as ProjectsData,
+  'research.json': researchJson as ResearchData,
+  'photos.json': photosJson as PhotosData,
 };
 
-export async function loadJsonData(filename: string): Promise<any> {
+export async function loadJsonData(filename: string): Promise<JsonDataFile<Article | Photo>> {
   const data = dataMap[filename];
   
   if (!data) {
@@ -49,20 +75,18 @@ let photosCache: Photo[] | null = null;
 
 export async function getPhotoById(id: number): Promise<Photo | null> {
   if (!photosCache) {
-    const data = await loadJsonData('photos.json');
+    const data = await loadJsonData('photos.json') as PhotosData;
     photosCache = data.content;
   }
-  // TypeScript doesn't narrow after async, so we assert photosCache is non-null
-  return photosCache!.find(p => p.id === id) || null;
+  return photosCache.find(p => p.id === id) ?? null;
 }
 
 export async function getAllPhotos(): Promise<Photo[]> {
   if (!photosCache) {
-    const data = await loadJsonData('photos.json');
+    const data = await loadJsonData('photos.json') as PhotosData;
     photosCache = data.content;
   }
-  // TypeScript doesn't narrow after async, so we assert photosCache is non-null
-  return photosCache!;
+  return photosCache;
 }
 
 // ============================================

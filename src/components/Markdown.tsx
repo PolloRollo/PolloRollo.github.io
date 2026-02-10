@@ -19,12 +19,12 @@ function Markdown( {url} : MarkdownProps) {
         }
         const text = await response.text();
         setContent(text);
-      } catch (err: any) {
-        setError(err.message);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'An unknown error occurred');
       }
     };
 
-    fetchReadme();
+    void fetchReadme();
   }, [url]);
 
   if (error) {

@@ -38,7 +38,7 @@ const Hero = ({
 
   useEffect(() => {
     if (photoId) {
-      getPhotoById(photoId).then(p => {
+      void getPhotoById(photoId).then(p => {
         if (p) {
           setPhoto(p);
           setCloudinaryId(p.cloudinary);
@@ -53,7 +53,7 @@ const Hero = ({
       <div className="hero-background">
         <AdvancedImage cldImg={cld.image(cloudinaryId)} />
         <div className="hero-overlay" />
-        {showAttribution && photo && photo.attribution && (
+        {showAttribution && photo?.attribution && (
           <div className="hero-attribution">
             {photo.location && `${photo.location}`}
             {photo.date && ` • ${photo.date}`}
@@ -77,7 +77,7 @@ const Hero = ({
                 {subtitle}
               </p>
             )}
-            {(primaryButton || secondaryButton) && (
+            {((primaryButton ?? secondaryButton) != null) && (
               <div className="hero-buttons flex flex-col sm:flex-row gap-4 justify-center">
                 {primaryButton && (
                   <Link

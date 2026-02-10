@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import ProjectsHero from '../components/ProjectsHero';
 import PhotoGallery from '../components/PhotoGallery';
 import PhotoLightbox from '../components/PhotoLightbox';
-import { loadJsonData } from '../lib/utils';
+import { loadJsonData, JsonDataFile, Photo as PhotoType } from '../lib/utils';
 import '../styles/pages/Photography.css';
 
 interface Photo {
@@ -25,7 +25,8 @@ function Photography() {
   useEffect(() => {
     loadJsonData('photos.json')
       .then((data) => {
-        setPhotos(data.content);
+        const typedData = data as JsonDataFile<PhotoType>;
+        setPhotos(typedData.content as Photo[]);
       })
       .catch((error) => {
         console.error('Error loading photos:', error);

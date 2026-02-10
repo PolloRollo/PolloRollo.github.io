@@ -21,7 +21,7 @@ const ProjectsHero = ({ photoId, title, focalPoint, showAttribution = false }: P
   const [bgPosition, setBgPosition] = useState<string>('center center');
 
   useEffect(() => {
-    getPhotoById(photoId).then(p => {
+    void getPhotoById(photoId).then(p => {
       if (p) {
         setPhoto(p);
         // Generate Cloudinary URL from cloudinaryId
@@ -30,7 +30,7 @@ const ProjectsHero = ({ photoId, title, focalPoint, showAttribution = false }: P
           setPhotoImage(cloudinaryUrl);
         }
         // Use photo's focalPoint if not overridden
-        const effectiveFocalPoint = focalPoint || p.focalPoint;
+        const effectiveFocalPoint = focalPoint ?? p.focalPoint;
         if (effectiveFocalPoint) {
           setBgPosition(`${effectiveFocalPoint.x}% ${effectiveFocalPoint.y}%`);
         } else {
@@ -51,7 +51,7 @@ const ProjectsHero = ({ photoId, title, focalPoint, showAttribution = false }: P
         } as React.CSSProperties}
       >
         <h1 className="projects-hero-title">{title}</h1>
-        {showAttribution && photo && photo.attribution && (
+        {showAttribution && photo?.attribution && (
           <div className="projects-hero-attribution">
             {photo.location && `${photo.location}`}
             {photo.date && ` • ${photo.date}`}

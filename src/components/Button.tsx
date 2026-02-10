@@ -1,5 +1,6 @@
 import '../styles/components/Button.css';
 import { Link } from 'react-router-dom';
+import React from 'react';
 
 /* 
 
@@ -11,10 +12,10 @@ const STYLES = ['btn--primary', 'btn--outline', 'btn--test'];
 const SIZES = ['btn--medium', 'btn--large'];
 
 interface ButtonProps {
-  children: any,
-  type: any,
+  children: React.ReactNode,
+  type: 'button' | 'submit' | 'reset',
   to: string,
-  onClick: any,
+  onClick: React.MouseEventHandler<HTMLButtonElement>,
   buttonStyle: string,
   buttonSize: string,
 }
@@ -23,7 +24,9 @@ const Button: React.FC<ButtonProps> = ({
   children, 
   type, 
   to, 
-  onClick=()=>{}, 
+  onClick = () => {
+    // Default no-op handler
+  }, 
   buttonStyle, 
   buttonSize 
 }) => {

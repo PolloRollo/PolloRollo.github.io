@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Markdown from "../components/Markdown";
-import { loadJsonData } from "../lib/utils";
+import { loadJsonData, JsonDataFile, Article as ArticleType } from "../lib/utils";
 import ProjectsHero from "../components/ProjectsHero";
 import ResearchHero from "../components/ResearchHero";
 import '../styles/pages/ArticlePage.css';
@@ -11,11 +11,6 @@ interface ArticlePageProps {
     json: string
 }
 
-// Define the article type
-interface Category {
-    category: string
-    content: Article[]
-}
 
 // Define the article type
 interface FocalPoint {
@@ -46,9 +41,10 @@ function ArticlePage({json}: ArticlePageProps) {
 
   useEffect(() => {
     loadJsonData(json)
-      .then((data: Category) => {
-        setCategory(data.category);
-        const foundArticle = data.content.find((item) => item.slug === slug);
+      .then((data) => {
+        const typedData = data as JsonDataFile<ArticleType>;
+        setCategory(typedData.category);
+        const foundArticle = (typedData.content as Article[]).find((item) => item.slug === slug);
         if (foundArticle) {
           setArticle(foundArticle);
           // Resolve photo ID if present
@@ -62,7 +58,10 @@ function ArticlePage({json}: ArticlePageProps) {
           setError("Article not found.");
         }
       })
-      .catch((err) => setError(err.message));
+      .catch((err) => {
+        const errorMessage = err instanceof Error ? err.message : 'An unknown error occurred';
+        setError(errorMessage);
+      });
   }, [slug, json]);
 
   if (error) {
@@ -85,13 +84,14 @@ function ArticlePage({json}: ArticlePageProps) {
           showAttribution={true}
         />
       ) : (
-        <ResearchHero image={fallbackImage || '/images/2020_08_Wildflowers.webp'} title={article.title} />
+        // TODO: Fallback image no longer exists, so why are we checking for it?
+        <ResearchHero image={fallbackImage ?? '/images/2020_08_Wildflowers.webp'} title={article.title} />
       )}
       <div className="article-page">
         {/* GitHub Link, Paper Link, and Technologies Section */}
-        {(article.github || article.paper || (article.technologies && article.technologies.length > 0)) && (
+        {((article.github ?? article.paper ?? (article.technologies && article.technologies.length > 0)) != null) && (
           <div className="article-metadata">
-            {(article.github || article.paper) && (
+            {((article.github ?? article.paper) != null) && (
               <div className="article-buttons">
                 {article.github && (
                   <a 

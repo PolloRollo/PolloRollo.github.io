@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import '../styles/components/RangeSlider.css';
 
 interface RangeSliderProps {
@@ -15,7 +15,7 @@ function RangeSlider({thumbIcon, min, max, value, step, onChange}: RangeSliderPr
     const [inputValue, setInputValue] = useState(value)
     const sliderRef = useRef<HTMLInputElement | null>(null);
   
-    function handleSliderInput(){
+    const handleSliderInput = useCallback(() => {
         const sliderElement: HTMLInputElement | null = sliderRef.current;
         if (sliderElement) {
           const range = max - min;
@@ -25,11 +25,11 @@ function RangeSlider({thumbIcon, min, max, value, step, onChange}: RangeSliderPr
           setInputValue(Number(sliderElement.value));
           onChange(Number(sliderElement.value));
         }
-    }
+    }, [max, min, onChange]);
   
     useEffect(() => {
       handleSliderInput();
-    }, [sliderRef])
+    }, [handleSliderInput])
   
     function handleNumberInput(e: React.ChangeEvent<HTMLInputElement>){
       const newValue = parseInt(e.target.value);

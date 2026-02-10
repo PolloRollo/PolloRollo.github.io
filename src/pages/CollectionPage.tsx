@@ -4,7 +4,7 @@ import { BentoGrid, BentoItem } from '../components/BentoGrid';
 import ContentCard from '../components/ContentCard';
 import ProjectsHero from '../components/ProjectsHero';
 import ResearchHero from '../components/ResearchHero';
-import { loadJsonData } from '../lib/utils';
+import { loadJsonData, JsonDataFile, Article as ArticleType } from '../lib/utils';
 import '../styles/pages/CollectionPage.css';
 
 interface CollectionPageProps {
@@ -30,8 +30,9 @@ function CollectionPage({ source }: CollectionPageProps) {
     // Load articles from JSON file using data loader
     loadJsonData(source)
       .then((data) => {
-        setArticles(data.content);
-        setCategory(data.category);
+        const typedData = data as JsonDataFile<ArticleType>;
+        setArticles(typedData.content as Article[]);
+        setCategory(typedData.category);
       })
       .catch((error) => {
         console.error('Error loading articles:', error);
@@ -43,8 +44,9 @@ function CollectionPage({ source }: CollectionPageProps) {
     console.log("Route changed:", location.pathname);
     loadJsonData(source)
       .then((data) => {
-        setArticles(data.content);
-        setCategory(data.category);
+        const typedData = data as JsonDataFile<ArticleType>;
+        setArticles(typedData.content as Article[]);
+        setCategory(typedData.category);
       })
       .catch((error) => {
         console.error('Error loading articles:', error);

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { BentoGrid, BentoItem } from './BentoGrid';
 import ContentCard from './ContentCard';
-import { loadJsonData } from '../lib/utils';
+import { loadJsonData, JsonDataFile, Article } from '../lib/utils';
 import { siteConfig } from '../config/siteConfig';
 import '../styles/components/RecentPosts.css';
 
@@ -22,9 +22,10 @@ function RecentProjects() {
     // Load projects from JSON file using data loader
     loadJsonData('projects.json')
       .then((data) => {
+        const typedData = data as JsonDataFile<Article>;
         // Get only the 2 most recent projects
-        setArticles(data.content.slice(0, 2));
-        setCategory(data.category);
+        setArticles(typedData.content.slice(0, 2));
+        setCategory(typedData.category);
       })
       .catch((error) => {
         console.error('Error loading projects:', error);

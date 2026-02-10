@@ -125,7 +125,7 @@ const PhotoLightbox = ({
           {photo.title && (
             <h2 className="photo-lightbox-title">{photo.title}</h2>
           )}
-          {(photo.date || photo.location) && (
+          {((photo.date ?? photo.location) != null) && (
             <div className="photo-lightbox-meta">
               {photo.date && <span>{photo.date}</span>}
               {photo.date && photo.location && <span> • </span>}
